@@ -19,3 +19,4 @@ For visualization, I used DataWrapper to chart.
 
 #### For the full list of winners' profile, please see `IdolSurvialShow.xlsx`.
 #### For information about each winner and their company in a cleaned dataset, please see `IdolSurvivalShow.csv`.
+#### For analysis with Pandas and Python, please see `survivalShow.ipynb`.
