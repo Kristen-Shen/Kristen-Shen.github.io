@@ -4,9 +4,10 @@
 ### Description
 As there are continual disputes on big companies' manipulation of votes on the final results, I decided to see how many winner are from renowned entertainment agencies and if particular agencies have multiple winners in four seasons (Produce 101, Produce Camp 2019, Produce Camp 2020, Produce Camp 2021).
 ![logos](logos.png)
+
 I found the company with the most winners have employees mostly clustered in one season. Interestingly, more popular seasons, indicating by the average numbers of votes, have less winners from renowned agencies.
 
-**Give a read to [this article](https://kristen-shen.github.io/idol_show/) if you're interested!** 
+### **Give a read to [this article](https://kristen-shen.github.io/idol_show/) if you're interested!** 
 
 ### Process
 I extracted data on winners across four seasons on [Produce Wiki](https://produce-camp.fandom.com/wiki/Produce_Camp_Wiki). I used AI to help me create a spreadsheet for each season and put them into a new excel file. I organized the file manually to make each individual's name, company information, and numbers of votes displayed in the same format. I also manually verified the names of each winner and their companies as some translations from Mandarin Chinese may not be accurate.
