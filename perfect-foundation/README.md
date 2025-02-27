@@ -37,4 +37,4 @@ I also contextualize the data with current fashion trends to examine its social 
 
 ## 📝 Contact me! 
 If you have any suggestion or questioins, please reach out
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto: hs3183@columbia.edu)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hs3183@columbia.edu)
