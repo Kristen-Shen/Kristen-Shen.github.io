@@ -40,7 +40,7 @@ This is a project that I investigated a lot of time and energy into. With an Eng
 
 I benefited a lot from self online learning regarding word frequency and word embedding analysis. I also improved my charting skills through self-learning wordcloud and treemap with ggplot and R. 
 
-I improved my data cleaning skills using pandas to create multiple tables. I began to pay more attention to details while reading the datasets.
+I improved my data cleaning skills using pandas to create multiple tables. I began to pay more attention to details while reading the datasets. I also learned so much on web interactive design like scrolling and switchiing between different images and links.
 
 Due to time limitation, I didn't get time to update the dataset by scraping the latest information on the two makeup websites as there are multiple security blockers on those websites. Though I didn't success this time, I gained valuable experiences on web scraping and what tools I should use.
 
