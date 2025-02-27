@@ -1,5 +1,5 @@
 # The "Perfect" Foundation
-<mark>Hi ✋! Take a look at my article [here](https://kristen-shen.github.io/perfect-foundation/).</mark>
+<mark>Hi ✋! Take a look at my article ⚡ ⚡ ⚡  [here](https://kristen-shen.github.io/perfect-foundation/).</mark>
 
 ## 📝 A Snapshot of the Project
 In this data-driven project, I explored all makeup foundation shades on [Sephora](https://www.sephora.com/shop/foundation-makeup?pageSize=300")
