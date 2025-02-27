@@ -35,6 +35,25 @@ I also contextualize the data with current fashion trends to examine its social 
     <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white" />
 </p>
 
+## 🤔 Afterthoughts
+This is a project that I investigated a lot of time and energy into. With an English literature background, I always have an interest to do word frequency analysis. This is my first step.
+
+I benefited a lot from self online learning regarding word frequency and word embedding analysis. I also improved my charting skills through self-learning wordcloud and treemap with ggplot and R. 
+
+I improved my data cleaning skills using pandas to create multiple tables. I began to pay more attention to details while reading the datasets.
+
+Due to time limitation, I didn't get time to update the dataset by scraping the latest information on the two makeup websites as there are multiple security blockers on those websites. Though I didn't success this time, I gained valuable experiences on web scraping and what tools I should use.
+
+In the future, if I have more time, I will try again for scraping the website to explore current trend. I'll also update my article if I get a chance talking to fashion experts. 
+
+## 🗄️ Files in the Repo
+- `foundation_info.ipynb`: basic data cleaning and exploration
+- `synonyms_analysis.ipynb`: 3d PCA analysis and grouped information for tales in the article
+- `word.R`: ggplot for wordcloud and treemap
+- `allNumbers.csv`: all information from two websites, which can be found in the pudding's [dataset](https://github.com/the-pudding/data/tree/master/foundation-names)
+- `word_updated.csv`: all information with categories I created
+- `grouped_products_counts.csv`: most relevant to my table about the most common prodcut names by brand and frequency
+
 ## 📝 Contact me! 
 If you have any suggestion or questioins, please reach out
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hs3183@columbia.edu)
