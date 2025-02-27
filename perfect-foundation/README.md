@@ -10,11 +10,26 @@ I also contextualize the data with current fashion trends to examine its social 
 ## 📊 Methods
 ### Word Frequency Analysis
 #### Quantitative + Qualitative
-- Self-learned [online tutorial](https://investigate.ai/text-analysis/counting-words-with-pythons-counter/) ane explored different methods
+- Self-learned [online tutorial](https://investigate.ai/text-analysis/counting-words-with-pythons-counter/) and explored different methods
 - Self-learned [plotly](https://plotly.com/python/pca-visualization/) for 3D PCA analysis
-- Used Counter [https://pymotw.com/3/collections/counter.html] tool 
+- Used [Counter](https://pymotw.com/3/collections/counter.html) tool 
 - semantic analysis consulting [Oxford English Dictionary](https://www.oed.com/?tl=true) and [the academic paper](https://www.doria.fi/bitstream/handle/10024/180034/selen_jennie.pdf?sequence=2)
 ### Visualization 
-- ![wordcloud](wordcloud.png):`ggplot` + `wordcloud 2` package
-- ![treemap](treemap.png): `pandas` + `python` for data cleaning; `ggplot`
-- multiple word frequency tables: `pandas` + `python` for data cleaning; `datawrapper`
+- [wordcloud](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/perfect-foundation/wordcloud.html):`ggplot` + `wordcloud 2` package
+- [treemap graph](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/perfect-foundation/treemap.png): `pandas` + `python` for data cleaning; `ggplot`for charting
+- multiple word frequency tables: `pandas` + `python` for data cleaning; `datawrapper`for charting
+- [3d PCA analysis](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/perfect-foundation/pca_plot.html): `plotly` & `python` & `pandas`
+
+## ✨ Inspiration 
+- Thanks to the pudding's fantastic [dataset](https://github.com/the-pudding/data/tree/master/foundation-names)
+- Thanks to my professor [@Soma](https://github.com/jsoma) for the great online tutorials about word frequency analysis
+- Qualitative semantic analysis is inspired by my undergrad English literature major and digital humanities research
+
+## 💪 Skills & Tools
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+<img src="https://img.shields.io/badge/Xcode-007ACC?style=flat-square&logo=Xcode&logoColor=white" />
+![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
+
