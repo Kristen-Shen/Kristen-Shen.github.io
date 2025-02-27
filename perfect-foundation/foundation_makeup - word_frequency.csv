@@ -1,0 +1,166 @@
+Word,Count,Group,Subgroup,Synonym
+spf,546,function,skin,
+matte,506,function,,
+powder,406,texture,,
+liquid,401,texture,,
+longwear,289,feature,time_length,
+full,239,feature ,coverage,absolute 
+stick,194,texture,,
+soft,193,texture,,
+broad,192,feature,coverage,
+perfection,169,feature ,perfect,absolute
+mineral,165,texture ,,
+filtr,150,function,,conceal
+barepro,138,feature ,natural,original
+ultra,132,feature ,perfect,absolute
+original,120,feature ,natural,original
+hydrating,120,feature ,skin_protect,
+luminous,113,feature ,natural ,glow
+24 hour,105,feature ,time_length,absolute
+weightless,102,feature ,perfect,absolute
+natural,98,feature ,natural,
+fluid,97,texture,,
+velvet,94,texture,,
+tinted,94,color,,
+pretty,87,feature ,,beauty
+traceless,79,feature ,perfect,absolute 
+teint,76,color ,,
+high,73,feature ,,compare
+better,73,feature ,,compare
+conceal,70,feature ,,conceal
+invisible,70,feature,,conceal
+perfecting,68,feature ,perfect,absolute 
+customizable,67,function,,
+beyond,66,feature,,compare
+fresh,64,feature,natural,
+magic,62,feature ,mysterious ,
+idole,62,feature ,,beauty
+concealer,61,feature ,,conceal
+rescue,60,feature ,,conceal
+loose,60,texture,,
+light,60,texture,,
+clean,58,feature ,natural,
+tint,57,color,,
+oilfree,52,texture ,skin,
+lockit,52,function,,
+glow,51,feature ,natural,glow
+24h,51,feature ,,absolute 
+best,50,feature ,perfect,compare
+lightweight,50,texture ,natural,
+colorstay,50,feature ,time_length,long
+TRUE,48,feature ,,absolute 
+skincare,46,feature ,skin,
+synchro,46,feature ,time_length,
+selfrefreshing,46,feature ,natural,
+stay,43,feature ,time_length,
+authentik,43,feature ,perfect,
+fidelity,43,feature ,,virtue
+moisturizer,42,feature ,skin,
+veiled threat,42,feature ,,conceal
+microblurring,42,feature ,skin,conceal 
+hue,42,feature ,emotion ,happy
+super,41,feature ,,compare 
+aqua,40,feature ,skin,hydrate
+but,40,feature ,,compare 
+fit,40,feature ,,virtue 
+poreless,40,feature ,skin,poreless
+fluide,40,texture,,
+beauté,40,feature ,,beauty
+naturel,40,feature ,natural,
+happy,39,feature ,emotion ,happy
+buildable,39,feature ,,virtue 
+waterproof,38,feature ,,long
+sublime,36,feature ,mysterious ,
+transformatte,35,feature ,mysterious ,
+pore vanishing,35,feature ,skin,poreless
+nude,34,feature ,natural ,nude
+even,33,feature ,,compare 
+hydra,32,feature ,skin,hydrate
+changemaker,32,feature ,,compare 
+supercharged,32,feature ,perfect,absolute
+micellar,32,feature ,skin,poreless
+bloom,30,feature ,,beauty
+flowerinfused,30,feature ,,beauty
+blurring,30,feature ,,conceal
+diorskin,28,feature ,skin,brand
+forever,28,feature,perfect,absolute
+flawless,27,feature,perfect,conceal
+radiant,26,absolute,skin,glow
+reflecting,26,feature,skin,glow
+dual,25,feature,function,
+multitasking,25,feature,function,
+all,24,feature,,absolute
+alight,24,feature,natural,glow
+reboot,24,feature,,virtue
+active,24,feature,,virtue
+revitalizing,24,function,,virtue
+oil,23,texture,,
+infallible,22,feature,perfect,absolute
+promatte,22,texture,,
+hyaluronic,20,ingredient,,
+acid,20,ingredient,,
+smooth,20,feature,natural,smooth
+glowing,20,feature,natural,glow
+absolute,16,feature,perfect,absolute
+refill,16,function,,
+etherealist,16,feature,mysterious,
+perfect,16,feature ,perfect ,absolute 
+clear,16,feature ,natural ,clean
+custom,16,function,,
+brightening,15,feature ,skin_protect,
+feels good,15,feature ,emotion ,happy
+nourishing,15,feature ,skin_protect,glow
+surreal,14,feature ,mysterious ,
+city,14,feature ,,virtue
+milk,14,texture ,,smooth
+no mistake,13,feature ,perfect,absolute
+phytopigments,13,color,,
+mattifying,12,texture,,
+lifting,12,function ,,
+hydromaniac,12,feature ,mysterious ,
+glowy,12,feature ,natural,glow
+hydrator,12,feature,skin,hydrate
+veil blur,11,feature,,conceal
+superbalanced,11,feature,skin,absolute
+healthy,10,feature,natural,
+nudies,10,color,,nude
+fast,9,feature ,time_length,
+base,9,feature ,natural ,simple
+hydrate,8,feature ,skin_protect,hydrate
+silk,8,texture ,,
+microsmooth,8,texture ,skin_protect,smooth
+baked,8,color,,
+dreamskin,8,feature ,mysterious ,
+simply,8,feature ,natural ,simple
+ageless,8,feature ,,age
+vibrancy,7,feature ,natural ,virtue
+argan,7,feature ,plant,
+refresh,7,feature ,natural,
+repairing,7,feature ,skin,
+almost,6,feature ,perfect,
+foundcealer,6,feature ,,conceal
+biome,6,feature ,skin,bio
+water,6,feature ,skin,hydrate
+blend,6,function,,
+crema,5,texture,,
+nuda,5,feature ,natural ,
+supreme,5,feature ,perfect ,absolute 
+reviving,5,feature ,natural ,glow
+smoothing,5,feature ,skin,smooth
+firming,5,feature ,skin,
+color,5,color,,
+control,5,function ,,
+cream,3,texture,,
+smart,3,feature ,,virtue
+shade,3,color ,,
+skintone,3,color,,
+concentrate,2,texture,,
+defense,1,function ,skin,
+teinté,1,color,,
+beauty,1,feature,,beauty
+sunscreen,1,function ,skin,
+bareskin,1,feature ,natural,
+pure,1,feature,natural,
+sports,1,function ,,
+shameless,1,feature ,,virtue
+youthfullook,1,feature ,,age
