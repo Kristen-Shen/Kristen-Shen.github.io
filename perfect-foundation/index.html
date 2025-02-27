@@ -165,15 +165,15 @@
 
     .scroll-container {
             display: flex;
-            overflow-x: scroll;  /* Enables horizontal scrolling */
+            overflow-x: scroll;  /* horizontal scrolling */
             scroll-behavior: smooth;
             width: 100%;
-            white-space: nowrap; /* Ensures items stay in a row */
+            white-space: nowrap; /* items in a row */
         }
 
         /* Chart wrapper */
     .chart-wrapper {
-        flex: 0 0 100%;  /* Each chart takes full width */
+        flex: 0 0 100%;  /*full width */
         text-align: center;
         /* width: 800px; */
         padding: 20px;
@@ -209,9 +209,9 @@
     }
 
     .flashing-text {
-        animation: flash 1s infinite;  /* 1-second cycle, repeats forever */
+        animation: flash 2s infinite;
         font-weight: bold;
-        color: white; /* Ensures visibility */
+        color: white; 
     }
 
     /* Mobile Styles */
@@ -338,6 +338,8 @@
     <button class="scroll-button" onclick="scrollLeft()">Most Popular Brands</button>
     <button class="scroll-button" onclick="scrollRight()">Most Common Names</button>
     <button class="scroll-button" onclick="scrollRight()">All Names</button>
+    <button class="scroll-button" onclick="scrollRight()">Word Clusters</button>
+
 </div>
 <div class="scroll-container" id="scrollContainer">
     <div class="chart-wrapper">
@@ -349,8 +351,9 @@
     </div>
     <div class="chart-wrapper">
         <iframe title="Chart 3" id="datawrapper-chart-3" src="https://datawrapper.dwcdn.net/SJE5X/1/" scrolling="no" frameborder="0" width="600" height="600"></iframe>
-        <!-- <iframe title="All names by frequency" aria-label="Table" id="datawrapper-chart-SJE5X" src="https://datawrapper.dwcdn.net/SJE5X/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="709" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}(); -->
-        </script>
+    </div>
+    <div class="chart-wrapper">
+      <iframe id="dynamic-frame" src="pca_plot.html" width="950" height="1000" style="border: none; background: transparent;" width="600" height="600"></iframe>
     </div>
 </div>
 
@@ -434,13 +437,6 @@
         }
 
         
- 
-
-    
-
-
-
-
     </script>
     <style>
         /* Change this to adjust the padding between steps */
