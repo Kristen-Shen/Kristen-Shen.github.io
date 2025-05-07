@@ -1,0 +1,246 @@
+/* Add global box-sizing rule */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure body and html do not exceed viewport width */
+html, body {
+  overflow-x: hidden;
+}
+
+.bsky-icon {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M254.896 188.031C252.711 214.159 230.893 235.116 204.097 235.116H155.459C128.663 235.116 106.845 214.159 104.66 188.031L102.081 157.019H257.475L254.896 188.031Z" fill="currentColor"/><path d="M132.959 85.354H226.597L179.778 157.019H102.081L132.959 85.354Z" fill="currentColor"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 1.25em;
+  vertical-align: middle;
+  width: 1.25em;
+}
+
+.card {
+  background-color: #efcfe3;
+  box-shadow: none;
+  padding: 1rem;
+}
+
+.card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-content .content {
+  flex-grow: 1;
+  min-height: 180px; /* Adjust this value based on your content */
+}
+
+
+.card-content .mt-4 {
+  margin-top: auto;
+}
+
+.is-one-third {
+  max-width: 500px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.subtitle {
+  box-shadow: none;
+  margin-bottom: 5px !important;
+
+  font-family: -apple-system, BlinkMacSystemFont, Georgia, 'Times New Roman', Times, serif,
+    arial, sans-serif;
+}
+
+.hero-subtitle {
+  color: white;
+}
+
+.is-ft {
+  background-color: #5390d9;
+}
+
+.custom-link {
+  color: white;
+
+}
+
+.custom-link:hover {
+  color: white;
+}
+
+.image-container {
+  background-position: center;
+  background-size: cover;
+  /* border-radius: .75rem; */
+  height: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+}
+
+.box {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.hero {
+  background-color: #6366c4;
+}
+
+/* Adjust padding for hero-body */
+.hero-body {
+  padding: 2rem 1rem;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+}
+
+.title {
+  padding-bottom: 5px;
+  font-family: "Kaushan Script", serif,
+    arial, sans-serif;
+  color:aliceblue
+}
+
+p.title.is-4 {
+  font-family: -apple-system, BlinkMacSystemFont, Georgia, 'Times New Roman', Times, serif,
+  arial, sans-serif;
+}
+
+
+
+body {
+  background-color: #5390d9;
+  font-family: -apple-system, BlinkMacSystemFont, Georgia, 'Times New Roman', Times, serif,
+    arial, sans-serif;
+  color: aliceblue;
+}
+
+.caption-container {
+  margin-top: 1rem;
+  min-height: 2em;
+  position: relative;
+}
+
+.is-3 {
+  padding-bottom: 5px;
+  font-family: "Kaushan Script", serif,
+    arial, sans-serif;
+}
+
+.scroll-arrow {
+  bottom: 30px;
+  cursor: pointer;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+
+.image-fade-switch {
+  position: relative;
+  width: 400px;
+  max-width: 600px; 
+  height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.fade-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.fade-image.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+}
+
+.profile-container {
+  background-position: center;
+  background-size: cover;
+  border-radius: .75rem;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: #5390d9;
+
+}
+
+.section-header {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-header .title {
+  color: aliceblue;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.columns {
+  flex-wrap: wrap;
+}
+
+.columns.is-vcentered > .column {
+  padding: 2rem;
+}
+
+footer {
+  background-color: #6366c4;
+
+}
+
+@media screen and (max-width: 770px) {
+  .mobile-disappear {
+    display: none;
+  }
+
+  .hero-body {
+    padding: 1rem;
+  }
+
+  .columns.is-multiline > .column {
+    width: 100%;
+  }
+}
