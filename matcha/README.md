@@ -11,7 +11,7 @@ the increasing matcha trend in New York city. These elements blend personal expe
 - I interviewed all sources in person and edited using Adobe Audition.
 
 #### [Video](https://www.youtube.com/watch?v=a2P6cHjhOkM)
-- Downloaded from [youtube](https://www.youtube.com/watch?v=a2P6cHjhOkM)using command-line tool :
+- Downloaded from [youtube](https://www.youtube.com/watch?v=a2P6cHjhOkM) using command-line tool :
   - `brew install yt-dlp`
   - `yt-dlp [video link]`
 #### [Bar Chart](https://www.datawrapper.de/_/BfZRw/)
