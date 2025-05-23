@@ -14,6 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    
     <style>
         body {
             margin: 0;
@@ -32,7 +36,7 @@
         }
 
         a {
-            color: #f05349;
+            color: #FFB6C1;
         }
 
         .footer {
@@ -42,6 +46,7 @@
             margin-top: 4em;
             padding: 4em 0;
             color: white;
+            /* width: 100%; */
         }
 
         figure {
@@ -103,6 +108,7 @@
         padding: 20px;
         margin-bottom: 1.2em;
         color: white;
+
     }
 
         .audio-header {
@@ -133,6 +139,217 @@
         .audio-container audio {
             margin-bottom: 0;
         }
+
+        /* Map styling */
+        #map {
+            height: 400px;
+            border-radius: 8px;
+            margin-bottom: 1.2em;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Search bar styling */
+        .search-container {
+            background: linear-gradient(135deg, #5a7bb8, #667eea);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 1.2em;
+            box-shadow: 0 4px 15px rgba(90, 123, 184, 0.2);
+        }
+
+        .search-header {
+            color: white;
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .search-input-container {
+            position: relative;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 45px 12px 15px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            outline: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .search-btn {
+            background: #f05349;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(240, 83, 73, 0.3);
+        }
+
+        .search-btn:hover {
+            background: #e04338;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(240, 83, 73, 0.4);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            pointer-events: none;
+        }
+
+        .current-location-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .current-location-btn:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .search-suggestions {
+            background: white;
+            border-radius: 8px;
+            margin-top: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .suggestion-item {
+            padding: 12px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s ease;
+        }
+
+        .suggestion-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+
+        .store-list {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 1.2em;
+        }
+
+        .store-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 4px solid #5a7bb8;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .store-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .store-name {
+            font-family: 'Lora', Georgia, serif;
+            font-weight: bold;
+            color: #5a7bb8;
+            margin-bottom: 5px;
+        }
+
+        .store-address {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .store-description {
+            color: #333;
+            font-size: 0.85em;
+        }
+        .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        }
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            background-color: #5a7bb8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.6);
+        }
+
+        .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 1rem;
+        border-radius: 8px;
+        width: fit-content;
+        position: relative;
+        }
+
+        .close {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        }
+
+
 
         /* margin on mobile */
         @media (max-width: 640px) {
@@ -182,82 +399,272 @@
             width: 100%;
             height: 100%;
         }
-
-        
     </style>
 </head>
 
 <body>
     <div class="header with-image-bg">
         <div class="content">
-            <h1>This is the headline of the story you are about to read</h1>
-            <p class="subhead">Unlike the "basic" template, the header text is INSIDE of a .content class so it doesn't
-                get too
-                wide</p>
+            <h1>Bitterness Is the New Sweet: America’s Increased Matcha Obsession </h1>
+            <p class="subhead">Though Starbuck has had matcha latte for years, customers now prefer the “authentic” Japanese version.</p>
         </div>
     </div>
     <div class="content">
         <div class="byline">
             <p>By <a href="https://kristen-shen.github.io/">Kristen Shen</a></p>
         </div>
+        
         <!-- STYLED AUDIO CONTAINER -->
         <div class="audio-container">
             <div class="audio-header">
-                <div class="play-icon">
-                    <i class="fas fa-play"></i>
-                </div>
                 <span class="audio-title">4-Minute Listen</span>
             </div>
             <audio controls style="width: 100%; margin-top: 10px;">
                 <source src="matcha.mp3" type="audio/mpeg">
-               
             </audio>
         </div>
-        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-            line up okay.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.</p>
-    </div>
+        
+        <p>Bobby Riley just grabbed his favorite honey matcha drink from <a href="https://sorate.co/">Sorate</a>, a teahouse featuring Matcha at SOHO NYC. Because of the crowd, he had to enjoy his drink standing outside of the store on a rainy day.</p>
+        <p>Riley’s love of matcha grew recently. But it became his daily routine. Even living in the East Village, he regularly treks across the city for a sip.</p>
+        <p>Though Starbucks has had matcha latte for more than a decade, Riley was not a fan of it.</p>
+        <p>“I don't even think you could call that matcha. I like these places that import it, and it's not as industrialized as in here.” Riley said. </p>
+        <p>For “industrialized”, Riley means there are too many sweets inside the drink, hiding its original flavor.</p>
+        <p>Valerie Gotama, enjoying her weekly matcha cheesecake at <a href="https://global.nanasgreentea.com/">Nana's Green Tea</a>, agreed, “I love its authentic taste of bitterness, not too sweet. And the green tea flavor is strong.”</p>
+        <p>According to Sylvia Mela, the founder of Sorate, the quality of matcha powder is the deciding factor of a successful matcha drink. As the origin of tea ceremony and green tea, people usually consider Japanese and Chinese match powder to be of high quality. Mela is also one of them.</p>
 
-    <div class="header with-video-bg">
-        <div class="video-background">
-            <video src="bg-video.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+        <!-- chart 1 here -->
+         <iframe title="Japan Dominates U.S. Matcha Imports" aria-label="Column Chart" id="datawrapper-chart-BfZRw" src="https://datawrapper.dwcdn.net/BfZRw/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="413" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+        </script>
+        <p>Mela named her cafe “Sorate,” meaning “to keep calm” in Italian. She appreciated Japanese traditional tea ceremony in matcha making. Besides drinks, the teahouse sells ceremonial-grade matcha powders and handcrafted accessories. All the ceramics are designed by a popular Japanese artist Awami Aoki.</p>
+        
+        <!-- video added -->
+        <p style="color:#5a7bb8;">Want to learn how to use the accessories to make a cup of matcha tea? Click to watch a simple guideline!</p>
+       <!-- Trigger Button -->
+        <div class="center-container">
+            <button id="openModal">Click to Watch Video!</button>
         </div>
-        <div class="content">
-            <h1>Here is a header with a video background</h1>
-            <p class="subhead">Unlike the "basic" template, the header text is INSIDE of a .content class so it doesn't
-                get too
-                wide</p>
+        <!-- Modal Structure -->
+        <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <video id="modalVideo" controls width="640">
+            <source src="make_matcha.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
         </div>
-    </div>
-    <div class="content">
-        <div class="byline">
-            <p>By <a href="https://jonathansoma.com">Jonathan Soma</a></p>
         </div>
-        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-            line up okay.</p>
-        <p>You can use this for things other than headers if you want, too.</p>
+
+        <script>
+        const modal = document.getElementById("videoModal");
+        const openBtn = document.getElementById("openModal");
+        const closeBtn = document.querySelector(".close");
+        const video = document.getElementById("modalVideo");
+
+        openBtn.onclick = function () {
+        modal.style.display = "block";
+        }
+
+        closeBtn.onclick = function () {
+        modal.style.display = "none";
+        video.pause(); // stop the video when modal closes
+        }
+
+        window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            video.pause();
+        }
+        }
+        </script>
+
+        <br>
+        <br>
+        <p>Unlike many trendy cafes, Sorate doesn’t experiment with creative matcha drinks. Instead, she offers traditional matcha tea and latte with options of three powder grades: house, superior (Soku), and premium—each differing in bitterness and aroma.</p>
+        <p>Besides tea houses that focus on matcha drinks, more coffee and milk tea stores also add matcha to their menu.</p>
+        <!-- INTERACTIVE MAP SECTION -->
+        <h2 style="font-family: 'Lora', Georgia, serif; margin-bottom: 0.5em;">Find Local Matcha Stores</h2>
+        
+        <!-- SEARCH BAR -->
+        <div class="search-container">
+            <div class="search-header">🍵 Search Matcha Stores Near You!</div>
+            <div class="search-input-container">
+                <div style="position: relative; flex: 1;">
+                    <input type="text" id="search-input" class="search-input" placeholder="Enter zip code, city, etc">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <button id="search-btn" class="search-btn">Search</button>
+                <button id="current-location-btn" class="current-location-btn">
+                    <i class="fas fa-location-arrow"></i> Use My Location
+                </button>
+            </div>
+            <div id="search-suggestions" class="search-suggestions"></div>
+        </div>
+        
+        <div id="map"></div>
+        
+        <!-- STORE LIST -->
+        <div class="store-list">
+            <h3 style="font-family: 'Lora', Georgia, serif; margin-top: 0; color: #5a7bb8;">Stores Mentioned in the Story</h3>
+            <div id="store-list"></div>
+        </div>
+        
+        <p style="color:#5a7bb8;">Click on any store above or on the map markers to get directions!</p>
+        <br>
+        <p>For serious matcha fans, New York city still has a long way to go.</p>
+        <p>“Most matcha tastes cheap with inflated prices but low quality.” said Yuki Li, a food blogger and influencer on RedNotes.</p>
+        <p>Still, she is willing to pay a higher price if the matcha is really good. “There’s one place in Williamsburg I’ll go by subway for an hour,” she says, “the price is higher, but it’s worth it.”</p>
+        <p>Matcha, for many, is not only a tik tok trend, but a lifestyle. The mixed bitter-sweet taste becomes a way to relax—and if it comes with a $7 price tag, so be it.</p>
+
+
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([40.7128, -74.0060], 12);
+
+        // Add tile layer (map style)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Sample matcha store locations
+        const matchaStores = [
+            {
+                lat: 40.7250,
+                lng:  -74.0025,
+                name: "Sorate",
+                address: "103 Sullivan St, New York, NY",
+                description: "Traditional teahouse experiences serving ceremonial matcha tea and latte."
+            },
+            {
+                lat: 40.7473,
+                lng: -73.9881,
+                name: "Nana’s Green Tea",
+                address: "1250 Broadway, New York, NY",
+                description: "Instagram-worthy matcha lattes and matcha desserts."
+            },
+            {
+                lat: 40.7282,
+                lng: -73.9942,
+                name: "Matchaful",
+                address: "25 Centre St, New York, NY",
+                description: "Matcha cafe serving traditional and creative matcha drinks and sweets"
+            }
+        ];
+
+        // Custom matcha icon
+        const matchaIcon = L.divIcon({
+            html: '<div style="background-color: #5a7bb8; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 16px; border: 2px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">🍵</div>',
+            iconSize: [30, 30],
+            className: 'custom-div-icon'
+        });
+
+        // Add markers and store list
+        const storeListContainer = document.getElementById('store-list');
+        
+        matchaStores.forEach((store, index) => {
+            // Add marker to map
+            const marker = L.marker([store.lat, store.lng], { icon: matchaIcon }).addTo(map);
+            
+            // Create popup content
+            const popupContent = `
+                <div style="max-width: 250px; font-family: Georgia, serif;">
+                    <h3 style="margin: 0 0 8px 0; color: #5a7bb8; font-family: 'Lora', Georgia, serif;">${store.name}</h3>
+                    <p style="margin: 0 0 8px 0; font-weight: bold; color: #f05349; font-size: 0.9em;">${store.specialty}</p>
+                    <p style="margin: 0 0 8px 0; font-size: 0.85em;"><strong>${store.address}</strong></p>
+                    <p style="margin: 0 0 12px 0; color: #666; font-size: 0.8em; line-height: 1.4;">${store.description}</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=${store.lat},${store.lng}" 
+                       target="_blank" 
+                       style="color: #f05349; text-decoration: none; font-weight: bold; font-size: 0.9em;">
+                       Get Directions →
+                    </a>
+                </div>
+            `;
+            
+            marker.bindPopup(popupContent);
+            
+            // Create store list item
+            const storeItem = document.createElement('div');
+            storeItem.className = 'store-item';
+            storeItem.innerHTML = `
+                <div class="store-name">${store.name}</div>
+                <div class="store-address">${store.address}</div>
+                <div class="store-description">${store.description}</div>
+            `;
+            
+            // Add click event to center map on store
+            storeItem.addEventListener('click', () => {
+                map.setView([store.lat, store.lng], 15);
+                marker.openPopup();
+            });
+            
+            storeListContainer.appendChild(storeItem);
+        });
+
+        // Try to get user's location
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const userLat = position.coords.latitude;
+                const userLng = position.coords.longitude;
+                
+                // Add user location marker
+                const userIcon = L.divIcon({
+                    html: '<div style="background-color: #f05349; border-radius: 50%; width: 20px; height: 20px; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>',
+                    iconSize: [20, 20],
+                    className: 'user-location-icon'
+                });
+                
+                L.marker([userLat, userLng], { icon: userIcon })
+                    .addTo(map)
+                    .bindPopup('Your location');
+                
+                // Center map on user location
+                map.setView([userLat, userLng], 13);
+            }, (error) => {
+                console.log('Geolocation error:', error);
+            });
+        }
+
+        // Add some interactivity - highlight markers on hover
+        map.on('popupopen', function(e) {
+            e.popup.getElement().style.animation = 'fadeIn 0.3s ease';
+        });
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px !important;
+        }
+        
+        .leaflet-popup-tip {
+            background-color: white !important;
+        }
+    </style>
     </div>
     <div class="footer">
         <div class="content">
-        <p><strong>Check the methods & codes <a href="https://github.com/Kristen-Shen/Kristen-Shen.github.io/tree/main/idol-show">here</a></strong>.</p>
-        <a href="mailto:hs3183@columbia.edu" class="icon is-medium mr-3">
-            <i class="fas fa-envelope fa-lg" style="color:white;"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/kristen-he-shen-85a520214" class="icon is-medium mr-3">
-            <i class="fab fa-linkedin fa-lg" style="color:white;"></i>
-        </a>
-        <a href="https://github.com/Kristen-Shen" class="icon is-medium mr-3">
-            <i class="fab fa-github fa-lg" style="color:white;"></i>
-        </a>
-    
-        <a href="https://www.instagram.com/krishen_river" class="icon is-medium mr-3">
-            <i class="fab fa-instagram fa-lg" style="color:white;"></i>
-        </a>
+            <p><strong>Check the methods & codes <a href="https://github.com/Kristen-Shen/Kristen-Shen.github.io/tree/main/idol-show">here</a></strong>.</p>
+            <a href="mailto:hs3183@columbia.edu" class="icon is-medium mr-3">
+                <i class="fas fa-envelope fa-lg" style="color:white;"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/kristen-he-shen-85a520214" class="icon is-medium mr-3">
+                <i class="fab fa-linkedin fa-lg" style="color:white;"></i>
+            </a>
+            <a href="https://github.com/Kristen-Shen" class="icon is-medium mr-3">
+                <i class="fab fa-github fa-lg" style="color:white;"></i>
+            </a>
+            <a href="https://www.instagram.com/krishen_river" class="icon is-medium mr-3">
+                <i class="fab fa-instagram fa-lg" style="color:white;"></i>
+            </a>
+
         </div>
     </div>
-
 </body>
 
 </html>
