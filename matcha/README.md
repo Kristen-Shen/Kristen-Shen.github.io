@@ -1,30 +1,25 @@
-# The "Perfect" Foundation
-<mark>Hi ✋! Take a look at my article ⚡ ⚡ ⚡  [here](Bitterness Is the New Sweet: America’s Increased Matcha Obsession).</mark>
+# Bitterness Is the New Sweet: America’s Increased Matcha Obsession
+<mark>Hi ✋! Take a look at my article ⚡ ⚡ ⚡  [here](https://kristen-shen.github.io/matcha/).</mark>
 
 ## 📝 A Snapshot of the Project
 In this multimedia project, I creatively weave audio, data visualization, mapping, and video into my storytelling about
 the increasing matcha trend in New York city. These elements blend personal experiences with numbers, providing an engaging and rich narrative.
 
 ## 📊 Methods
-### [Audio]("https://drive.google.com/file/d/1carveY54v-MI1plgV7cKDWWfBnaLFM3j/view")
+### [Audio](https://drive.google.com/file/d/1carveY54v-MI1plgV7cKDWWfBnaLFM3j/view)
 - The audio piece include a wide range of sources and lively scenes.
 - I interviewed all sources in person and edited using Adobe Audition.
 
-#### [Video]("https://www.youtube.com/watch?v=a2P6cHjhOkM")
+### [Video](https://www.youtube.com/watch?v=a2P6cHjhOkM)
 - Downloaded from [youtube](https://www.youtube.com/watch?v=a2P6cHjhOkM)using command-line tool :
   - `brew install yt-dlp`
   - `yt-dlp [video link]`
-#### [Bar Chart]("https://www.datawrapper.de/_/BfZRw/")
+### [Bar Chart](https://www.datawrapper.de/_/BfZRw/)
 - Data source: [World Integrated Trade Solution](https://wits.worldbank.org/trade/comtrade/en/country/USA/year/2024/tradeflow/Imports/partner/ALL/product/090210?utm_source=chatgpt.com)
 - `pandas` + `python` for data cleaning
 - Visulaization: `datawrapper` for charting
-#### [Interactive Map]("https://kristen-shen.github.io/matcha/")
-- self-learned [Leaflet]("https://leafletjs.com/") and basic JavaScript
-
-## ✨ Inspiration 
-- Thanks to the pudding's fantastic [dataset](https://github.com/the-pudding/data/tree/master/foundation-names)
-- Thanks to my professor [@Soma](https://github.com/jsoma) for the great online tutorials about word frequency analysis
-- Qualitative semantic analysis is inspired by my undergrad English literature major and digital humanities research
+### [Interactive Map](https://kristen-shen.github.io/matcha/)
+- self-learned [Leaflet](https://leafletjs.com/) and basic JavaScript
 
 ## 💪 Skills & Tools
 <p>
