@@ -6,19 +6,19 @@ In this multimedia project, I creatively weave audio, data visualization, mappin
 the increasing matcha trend in New York city. These elements blend personal experiences with numbers, providing an engaging and rich narrative.
 
 ## 📊 Methods
-### [Audio](https://drive.google.com/file/d/1carveY54v-MI1plgV7cKDWWfBnaLFM3j/view)
+#### [Audio](https://drive.google.com/file/d/1carveY54v-MI1plgV7cKDWWfBnaLFM3j/view)
 - The audio piece include a wide range of sources and lively scenes.
 - I interviewed all sources in person and edited using Adobe Audition.
 
-### [Video](https://www.youtube.com/watch?v=a2P6cHjhOkM)
+#### [Video](https://www.youtube.com/watch?v=a2P6cHjhOkM)
 - Downloaded from [youtube](https://www.youtube.com/watch?v=a2P6cHjhOkM)using command-line tool :
   - `brew install yt-dlp`
   - `yt-dlp [video link]`
-### [Bar Chart](https://www.datawrapper.de/_/BfZRw/)
+#### [Bar Chart](https://www.datawrapper.de/_/BfZRw/)
 - Data source: [World Integrated Trade Solution](https://wits.worldbank.org/trade/comtrade/en/country/USA/year/2024/tradeflow/Imports/partner/ALL/product/090210?utm_source=chatgpt.com)
 - `pandas` + `python` for data cleaning
 - Visulaization: `datawrapper` for charting
-### [Interactive Map](https://kristen-shen.github.io/matcha/)
+#### [Interactive Map](https://kristen-shen.github.io/matcha/)
 - self-learned [Leaflet](https://leafletjs.com/) and basic JavaScript
 
 ## 💪 Skills & Tools
