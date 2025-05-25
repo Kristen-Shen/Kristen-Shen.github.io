@@ -102,6 +102,18 @@
             font-family: 'Courier New', monospace;
             background: #fff880;
         }
+    /* responsive body image*/
+        .figure-float-left {
+            float: left;
+            width: 250px;
+            margin: 0 15px 10px 0;
+        }
+
+        .figure-float-left img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
         .center-container {
         display: flex;
@@ -152,6 +164,8 @@
         font-weight: bold;
         cursor: pointer;
 
+
+
         /* table */
         table {
         width: 100%;
@@ -190,6 +204,11 @@
                 padding-left: 0.5em;
                 padding-right: 0.5em;
             }
+            .figure-float-left {
+                float: none;
+                width: 100%;
+                margin: 0 auto 1em auto;
+                }
         }
     </style>
     <style>
@@ -243,8 +262,8 @@
             <p>By <a href="https://kristen-shen.github.io/">Kristen Shen</a></p>
         </div>
 
-        <figure style="float:left; width:250px; margin-right:15px;">
-            <img src="vert.jpg" alt="image of e-vaper" style="width:100%;">
+        <figure class="figure-float-left">
+            <img src="vert.jpg" alt="Image of e-vaper">
             <figcaption style="font-size: 0.9em;">E-cigarettes' appearance</figcaption>
         </figure>
 
