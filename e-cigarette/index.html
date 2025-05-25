@@ -14,17 +14,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
     <style>
         body {
             margin: 0;
             font-size: 20px;
             font-family: Georgia, 'Times New Roman', Times, serif;
             text-rendering: optimizeLegibility;
-            background-color: #5390d9;
-            color: aliceblue;
         }
-
-
 
         .content {
             max-width: 640px;
@@ -39,14 +39,14 @@
             color: #FFB6C1;
         }
 
-
         .footer {
-        padding: 4em 0;
-        width: 100%;
-        margin: 0;
-        background-color: #6366c4;
-        color: white;
-        text-align: center;
+            background-color: #6366c4;
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 4em;
+            padding: 4em 0;
+            color: white;
+            /* width: 100%; */
         }
 
         figure {
@@ -60,12 +60,6 @@
             margin-top: 0.5em;
             color: #666;
         }
-        .footnote {
-            font-size: 0.7em;
-            text-align: left;
-            margin-top: 0.5em;
-            color: #666;
-        }
 
         h1 {
             font-family: 'Lora', Georgia, serif;
@@ -76,6 +70,10 @@
 
         .subhead {
             font-family: 'Lora', Georgia, serif;
+        }
+
+        .full-width figure {
+            text-align: center;
         }
 
         iframe,
@@ -102,13 +100,85 @@
 
         code {
             font-family: 'Courier New', monospace;
-            background: #fffbaf;
-            font-size: 0.85em;
+            background: #fff880;
         }
 
-        .full-width figure {
-            text-align: center;
+        .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
         }
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            background-color: #5a7bb8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.6);
+        }
+
+        .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 1rem;
+        border-radius: 8px;
+        width: fit-content;
+        position: relative;
+        }
+
+        .close {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+
+        /* table */
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+        border: 1px solid #ddd;
+        padding: 16px;
+        text-align: left;
+        }
+        th {
+        background-color: #5a7bb8;
+        color: black;
+        }
+        td:last-child {
+        font-weight: bold;
+        font-size: 1.1em;
+        }
+        tr:nth-child(even) {
+        background-color: #f4f6fb;
+        }
+        }
+
+
 
         /* margin on mobile */
         @media (max-width: 640px) {
@@ -122,57 +192,327 @@
             }
         }
     </style>
+    <style>
+        .with-image-bg,
+        .with-video-bg {
+            position: relative;
+            background-size: cover;
+            margin-bottom: 2em;
+
+            /* Center everything inside */
+            min-height: 70svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* White text with a shadow */
+            color: white;
+            text-shadow: 0px 0px 30px black,
+                0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .with-image-bg {
+            background-image: url('hor.jpg');
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .video-background video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="content">
-        <div class="header">
-            <h1>Fruity E-cigarette Remains Trendy for Teenagers, In One Chart</h1>
-
+    <div class="header with-image-bg">
+        <div class="content">
+            <h1>Bitterness Is the New Sweet: America’s Increased Matcha Obsession </h1>
+            <p class="subhead">Though Starbuck has had matcha latte for years, customers now prefer the “authentic” Japanese version.</p>
         </div>
+    </div>
+    <div class="content">
         <div class="byline">
             <p>By <a href="https://kristen-shen.github.io/">Kristen Shen</a></p>
         </div>
 
-        <figure style="background-color: #ffffff; padding: 20px; border-radius: 12px; text-align: center;">
-            <img src="my_chart_final.png"
-                 alt="fruity e-cigarette remains trendy"
-                 style="width: 100%; max-width: 640px;">
-        </figure>
-        
-        <br>
         <p>The popularity of e-cigarettes among teenages has concerned federal and state governments since 2021. 
             U.S. Food & Drug Administration tightened its enforcement policy on flavored e-cigarettes and issued more than <a href="https://www.fda.gov/news-events/congressional-testimony/epidemic-continues-youth-vaping-america-06232021#:~:text=On%20January%202%2C%202020%2C%20amid,of%20ENDS%20by%20underage%20persons">120 warning letters</a>
-            to films selling or distributing unauthorized electronic nicotine. 
+            to firms selling or distributing unauthorized electronic nicotine. 
             <a href="https://www.cdc.gov/statesystem/factsheets/ecigarette/ECigarette.html#:~:text=As%20of%20September%2030%2C%202024%2036%20states%20(Alabama%2C%20Alaska,cigarettes%20over%2Dthe%2Dcounter">Multiple states and municipalities</a> also intensified their regulation, banning the shipment of flavored e-cigarettes.
-            </p>
-        <p> 
-            The decline of all flavored e-cigarettes in 2021 reflects the stricter regulatory process. However, based on the National Youth Tobacco Survey, evaluating youth consumption of commercial tobacco, e-cigarettes with flavors like fruit, sweets, mint, and menthol remain popular. After hitting the trough, all flavored e-cigarettes started to bounce back, leading by the fruit flavor.
-
-        </p>
             
-        <p><i>*Currently the survey’s datasets post-2019 are not available due to President Trump’s Executive Orders.</i> </p>    
-    </div>
-    
-    <div class="footer">
-            
-        <p><strong>Check the methods & codes <a href="https://github.com/Kristen-Shen/e-cigarette-chart/tree/main">here</a></strong>.</p>
-        <a href="mailto:hs3183@columbia.edu" class="icon is-medium mr-3">
-            <i class="fas fa-envelope fa-lg" style="color:white;"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/kristen-he-shen-85a520214" class="icon is-medium mr-3">
-            <i class="fab fa-linkedin fa-lg" style="color:white;"></i>
-          </a>
-          <a href="https://github.com/Kristen-Shen" class="icon is-medium mr-3">
-            <i class="fab fa-github fa-lg" style="color:white;"></i>
-          </a>
-  
-          <a href="https://www.instagram.com/krishen_river" class="icon is-medium mr-3">
-            <i class="fab fa-instagram fa-lg" style="color:white;"></i>
-          </a>
-    </div>
-    
         
+
+        <p><a href="https://healthdata.gov/dataset/CDC-STATE-System-E-Cigarette-Legislation-Youth-Acc/4a8m-9cpy/about_data">Legislation</a> on e-cigarette from 1995 to 2025, in general, can be divided based on the types of enactments.</p>
+        <!-- table -->
+
+            <table class="table table-bordered table-hover align-middle text-center">
+                <thead class="table-info">
+                <tr>
+                    <th>Type</th>
+                    <th>Explanation</th>
+                    <th>Strictness Level</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Restriction</td>
+                    <td>Law exists (e.g. banning sales to minors)</td>
+                    <td><span class="badge bg-success">🟡 Mild</span></td>
+                </tr>
+                    <td>Enforcement</td>
+                    <td>State actively checks or monitors compliance</td>
+                    <td><span class="badge bg-warning">🟠 Moderate</span></td>
+                </tr>
+                <tr>
+                    <td>Penalty</td>
+                    <td>Fines or license actions for violations</td>
+                    <td><span class="badge bg-danger">🔴 Strongest</span></td>
+                </tr>
+                </tbody>
+            </table>
+
+        
+
+        <p>However, the intensity of the enforcement varies. 
+            <a href="https://www.publichealthlawcenter.org/sites/default/files/inline-files/ECigarette-Legal-Landscape-June152024.pdf">Some</a> enacted stricter regulations like banning online and in-store purchases with fining or education. 
+            Others allow in person retail or penalty with paying a little amount of fine. Flavor-specified restrictions also differ. 
+            States like New York and California even specify the prohibition of selling specific flavors—including fruit, mint, and candy-flavored ones. </p>
+        <!-- map -->
+        <div style="min-height:400px" id="datawrapper-vis-qARKD"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/qARKD/embed.js" charset="utf-8" data-target="#datawrapper-vis-qARKD"></script><noscript><img src="https://datawrapper.dwcdn.net/qARKD/full.png" alt="" /></noscript></div>
+        <br>
+        <p>Based on the National Youth Tobacco Survey, non-tobacco flavored e-cigarettes have been especially appealing to middle and high school students. 
+            Beneath the sweetness on the tongue lies harm potentially more severe than traditional cigarettes. 
+            The good-tasting flavors are made by multiple chemicals, which can <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8424560/?utm_source=chatgpt.com">damage cells in a person’s airway</a>, causing respiratory issues. The flavor chemicals also weaken immunity in the lung, increasing the risk of lung cancer and relevant breathing problems.</p>
+      
+        <!-- chart 2023 trend here -->
+        <div style="min-height:400px" id="datawrapper-vis-h1PCX"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/h1PCX/embed.js" charset="utf-8" data-target="#datawrapper-vis-h1PCX"></script><noscript><img src="https://datawrapper.dwcdn.net/h1PCX/full.png" alt="" /></noscript></div>
+        <br>
+        <p>The regulatory measures had an immediate impact. The decline of all flavored e-cigarettes in 2021 reflects the stricter regulatory process. However, based on the National Youth Tobacco Survey, evaluating youth consumption of commercial tobacco, e-cigarettes with flavors like fruit, sweets, mint, and menthol remain popular. After hitting the trough, all flavored e-cigarettes started to bounce back, leading by the fruit flavor.</p>
+
+        <!-- chart ai2html-ggplothere -->
+
+        <!-- Generated by ai2html v0.121.1 - 2025-05-24 22:26 -->
+        <!-- ai file: Data Studio 2025 Template.ai -->
+        <style media="screen,print">
+            #g-Data-Studio-2025-Template-box ,
+            #g-Data-Studio-2025-Template-box .g-artboard {
+                margin:0 auto;
+            }
+            #g-Data-Studio-2025-Template-box p {
+                margin:0;
+            }
+            #g-Data-Studio-2025-Template-box .g-aiAbs {
+                position:absolute;
+            }
+            #g-Data-Studio-2025-Template-box .g-aiImg {
+                position:absolute;
+                top:0;
+                display:block;
+                width:100% !important;
+            }
+            #g-Data-Studio-2025-Template-box .g-aiSymbol {
+                position: absolute;
+                box-sizing: border-box;
+            }
+            #g-Data-Studio-2025-Template-box .g-aiPointText p { white-space: nowrap; }
+            #g-Data-Studio-2025-Template-full {
+                position:relative;
+                overflow:hidden;
+            }
+            #g-Data-Studio-2025-Template-medium {
+                position:relative;
+                overflow:hidden;
+            }
+            #g-Data-Studio-2025-Template-mobile {
+                position:relative;
+                overflow:hidden;
+            }
+
+        </style>
+
+        <div id="g-Data-Studio-2025-Template-box" class="ai2html ai2html-responsive">
+
+            <!-- Artboard: full -->
+            <div id="g-Data-Studio-2025-Template-full" class="g-artboard" style="width:700px; height:425px;" data-aspect-ratio="1.647" data-min-width="700">
+        <div style=""></div>
+                <img id="g-Data-Studio-2025-Template-full-img" class="g-Data-Studio-Template-full-img g-aiImg" alt="" src="Data-Studio-2025-Template-full.jpg"/>
+            </div>
+
+            <!-- Artboard: medium -->
+            <div id="g-Data-Studio-2025-Template-medium" class="g-artboard" style="width:490px; height:350px;" data-aspect-ratio="1.4" data-min-width="490" data-max-width="699">
+        <div style=""></div>
+                <img id="g-Data-Studio-2025-Template-medium-img" class="g-Data-Studio-Template-medium-img g-aiImg" alt="" src="Data-Studio-2025-Template-medium.jpg"/>
+            </div>
+
+            <!-- Artboard: mobile -->
+            <div id="g-Data-Studio-2025-Template-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px" data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
+        <div style="padding: 0 0 125.5467% 0;"></div>
+                <img id="g-Data-Studio-2025-Template-mobile-img" class="g-Data-Studio-Template-mobile-img g-aiImg" alt="" src="Data-Studio-2025-Template-mobile.jpg"/>
+            </div>
+
+        </div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-Data-Studio-2025-Template-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-05-24 22:26 -->
+        <br>
+        <p>Unlike adult smokers often drawn to the taste of traditional tobacco, teenagers’ persistent attraction to sweet-flavored e-cigarettes suggest that their vaping habit may stem from different motivations. For some, it’s the appeal to the sweetness of  fruity or candy-like flavors; for others, it can be about social belonging or peer influence. On the journey to reduce teenage vaping rates, legal enforcement alone isn’t enough. Understanding the reasons behind—whether social or psychological—are also essential. Without addressing the causes, despite restrictions, they can always find alternative ways and places to access e-cigarettes. </p>
+
+
+    </div>
+    <div class="footer">
+        <div class="content">
+            <p><strong>Check the methods & codes <a href="https://github.com/Kristen-Shen/Kristen-Shen.github.io/tree/main/matcha">here</a></strong>.</p>
+            <a href="mailto:hs3183@columbia.edu" class="icon is-medium mr-3">
+                <i class="fas fa-envelope fa-lg" style="color:white;"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/kristen-he-shen-85a520214" class="icon is-medium mr-3">
+                <i class="fab fa-linkedin fa-lg" style="color:white;"></i>
+            </a>
+            <a href="https://github.com/Kristen-Shen" class="icon is-medium mr-3">
+                <i class="fab fa-github fa-lg" style="color:white;"></i>
+            </a>
+            <a href="https://www.instagram.com/krishen_river" class="icon is-medium mr-3">
+                <i class="fab fa-instagram fa-lg" style="color:white;"></i>
+            </a>
+
+        </div>
+    </div>
 </body>
 
 </html>
