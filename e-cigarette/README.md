@@ -1,4 +1,4 @@
-# The "Perfect" Foundation
+# Sweet-Flavored E-Vapes Still Hook Teens, Despite Stricter Laws
 <mark>Hi ✋! Take a look at my article ⚡ ⚡ ⚡  [here](https://kristen-shen.github.io/e-cigarette/).</mark>
 
 ## 📝 A Snapshot of the Project
@@ -6,17 +6,21 @@ I delved into the [National Youth Tobacco Survey](https://www.cdc.gov/tobacco/ab
 I also researched relevant [legislation](https://healthdata.gov/dataset/CDC-STATE-System-E-Cigarette-Legislation-Youth-Acc/4a8m-9cpy/about_data) across states and visualize the level of restrictions.
 
 ## 📊 Methods
-### Word Frequency Analysis
+### Responsive Design
+- Self-learned [online tutorial](https://www.youtube.com/watch?v=6LdCRYI4uF0) 
+- Self-learned basics of Adobe Illustrator
+- Self-learned picture responsive design with adjusting `html/css` code
 #### Quantitative + Qualitative
-- Self-learned [online tutorial](https://investigate.ai/text-analysis/counting-words-with-pythons-counter/) and explored different methods
-- Self-learned [plotly](https://plotly.com/python/pca-visualization/) for 3D PCA analysis
-- Used [Counter](https://pymotw.com/3/collections/counter.html) tool 
-- semantic analysis consulting [Oxford English Dictionary](https://www.oed.com/?tl=true) and [the academic paper](https://www.doria.fi/bitstream/handle/10024/180034/selen_jennie.pdf?sequence=2)
+- Self-learned multiple ways for better ggplot visualization
+- Based on CDC's state legislation [data](https://healthdata.gov/dataset/CDC-STATE-System-E-Cigarette-Legislation-Youth-Acc/4a8m-9cpy/about_data), I summarized the types of enforcements and checked if additional regulation is placed under each act. 
+- Then, I created a the numberical accessment of degree of strictness (can be found in `E-Cigarette Legislation Youth Access.csv`), based on the availability of three types of legislations and additional regulations.
+
 ### Visualization 
 - [heat map](https://www.datawrapper.de/_/qARKD/):`pandas` + `python` for data cleaning; `datawrapper`for charting
 - [bar chart](https://www.datawrapper.de/_/h1PCX/?v=3): `pandas` + `python` for data cleaning; `datawrapper`for charting
 - [line chart](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/e-cigarette/my_chart_final.png): `pandas` + `python` for data cleaning; `ggplot`for charting
 - [table](https://kristen-shen.github.io/e-cigarette/): `html` + `css` + `boostrap`for web design
+- body image with text wrap: `html` + `css` web design
 
 ## ✨ Inspiration 
 - [National Youth Tobacco Survey](https://www.cdc.gov/tobacco/about-data/surveys/national-youth-tobacco-survey.html)
@@ -31,7 +35,10 @@ I also researched relevant [legislation](https://healthdata.gov/dataset/CDC-STAT
     <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
     <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
     <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white" />
+    <img src="https://img.shields.io/badge/Illustrator-FF9A00?style=for-the-badge&logo=adobeillustrator&logoColor=white" alt="Illustrator badge" />
     <img src="https://img.shields.io/badge/ai2html-000000?style=for-the-badge&logo=adobeillustrator&logoColor=white" alt="ai2html logo badge" />
+    <img src="https://img.shields.io/badge/Responsive_Design-4CAF50?style=for-the-badge&logo=css3&logoColor=white" alt="Responsive Design badge" />
+
 
 </p>
 
@@ -51,7 +58,7 @@ In the future, if I have more time, I will try again for scraping the website to
 - `e-cigarette-data.csv` & `new_flavor.csv`: data filtered to create the [bar chart](https://www.datawrapper.de/_/h1PCX/?v=3) and the [line chart](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/e-cigarette/my_chart_final.png)
 - `nyts-dataset-codebook`: reference to the National Youth Tabacco Survey's methodology and all questions
     - Currently the survey’s datasets post-2019 are not available due to President Trump’s Executive Orders. 
-- `E-Cigarette Legislation Youth Access.csv`: numerical evaluation of e-cigarette legislation's degree of seriousness; used for the [heat map](https://www.datawrapper.de/_/qARKD/)and the [table](https://kristen-shen.github.io/e-cigarette/)
+- `E-Cigarette Legislation Youth Access.csv`: numerical evaluation of e-cigarette legislation's degree of seriousness; used for the [heat map](https://www.datawrapper.de/_/qARKD/) and the [table](https://kristen-shen.github.io/e-cigarette/)
     - original dataset is available to download [here](https://healthdata.gov/dataset/CDC-STATE-System-E-Cigarette-Legislation-Youth-Acc/4a8m-9cpy/about_data) 
 
 ## 📝 Contact me! 
