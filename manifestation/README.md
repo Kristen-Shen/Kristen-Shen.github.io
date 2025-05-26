@@ -1,4 +1,4 @@
-# Sweet-Flavored E-Vapes Still Hook Teens, Despite Stricter Laws
+# Cosmic Confidence or Costly Illusion? The Psychology Behind Manifestation
 <mark>Hi ✋! Take a look at my article ⚡ ⚡ ⚡  [here](https://kristen-shen.github.io/manifestation/).</mark>
 
 ## 📝 A Snapshot of the Project
