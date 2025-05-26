@@ -10,7 +10,7 @@ I also researched relevant [legislation](https://healthdata.gov/dataset/CDC-STAT
 - Self-learned [online tutorial](https://www.youtube.com/watch?v=6LdCRYI4uF0) 
 - Self-learned basics of Adobe Illustrator
 - Self-learned picture responsive design with adjusting `html/css` code
-#### Quantitative + Qualitative
+#### Quantitative + Qualitative Evaluation of States' Degree of Strictness on E-cigarette Regulation
 - Self-learned multiple ways for better ggplot visualization
 - Based on CDC's state legislation [data](https://healthdata.gov/dataset/CDC-STATE-System-E-Cigarette-Legislation-Youth-Acc/4a8m-9cpy/about_data), I summarized the types of enforcements and checked if additional regulation is placed under each act. 
 - Then, I created a the numberical accessment of degree of strictness (can be found in `E-Cigarette Legislation Youth Access.csv`), based on the availability of three types of legislations and additional regulations.
@@ -43,15 +43,15 @@ I also researched relevant [legislation](https://healthdata.gov/dataset/CDC-STAT
 </p>
 
 ## 🤔 Afterthoughts
+In this project, I practiced responsive design and created charts that is mobile and desktop friendly. I improved my design skills and familarized myself with using Illustrator to process images.
+
+I learned how to work with complex and large dataset, considering which variables I should use. I also applied statistical concepts I learned in this project to consider the variables and conclusions I could make from the dataset. 
+
+In general, I gained more experiences on data cleaning and improved my web design skills. 
+
 This is a project that I investigated a lot of time and energy into. With an English literature background, I always have an interest to do word frequency analysis. This is my first step.
 
-I benefited a lot from self online learning regarding word frequency and word embedding analysis. I also improved my charting skills through self-learning wordcloud and treemap with ggplot and R. 
-
-I improved my data cleaning skills using pandas to create multiple tables. I began to pay more attention to details while reading the datasets. I also learned so much on web interactive design like scrolling and switchiing between different images and links.
-
-Due to time limitation, I didn't get time to update the dataset by scraping the latest information on the two makeup websites as there are multiple security blockers on those websites. Though I didn't success this time, I gained valuable experiences on web scraping and what tools I should use.
-
-In the future, if I have more time, I will try again for scraping the website to explore current trend. I'll also update my article if I get a chance talking to fashion experts. 
+If I have more time to expand the project, I will try to make more charts to see the trend for e-cigarette preference by choosing multiple variables. I'd also conduct interviews to policymakers and teenagers on this topic.
 
 ## 🗄️ Files in the Repo
 - `flavor_chart.ipynb`: data cleaning and ggplot for [line chart](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/e-cigarette/my_chart_final.png)
