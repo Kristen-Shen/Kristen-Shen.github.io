@@ -403,6 +403,53 @@
         display: block;
         }
 
+        .collapsible-method {
+        background-color: #f3e8ff;
+        color: #4b0082;
+        cursor: pointer;
+        padding: 14px 20px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+        .collapsible-method.active {
+        background-color: #e0c8f2; /* light lavender on click */
+        color: #3b007d; /* darker text when active */
+        }
+        .collapsible-method:hover {
+        background-color: #d6a8e9; /* Light lavender for hover color */
+        color: #3b007d; /* hover text color */
+        }
+
+
+
+        .collapsible-method .icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-method.active .icon {
+            transform: rotate(90deg);
+        }
+
+        .method-content {
+            padding: 15px 20px;
+            display: none;
+            overflow: hidden;
+            background-color: #faf5ff;
+            border-left: 4px solid #ba55d3;
+            border-radius: 0 0 8px 8px;
+            font-size: 16px;
+            color: #333;
+        }
+
 
 
 
@@ -463,8 +510,8 @@
 <body>
     <div class="header with-image-bg">
         <div class="content">
-            <h1>Bitterness Is the New Sweet: America’s Increased Matcha Obsession </h1>
-            <p class="subhead">Though Starbuck has had matcha latte for years, customers now prefer the “authentic” Japanese version.</p>
+            <h1>Cosmic Confidence or Costly Illusion? The Psychology Behind Manifestation</h1>
+            <p class="subhead">Social media influencers promise quick success through manifestation, but psychologists say the truth is more complex.</p>
         </div>
     </div>
     <div class="content">
@@ -486,6 +533,7 @@
          
         </div>
 
+        <p>“Fake it till you make it” seems a cliche in building self confidence. But manifestation is not. Rather than pretending your ability to achieve something, manifestation claims that you have already got it. The only thing you need to do is to manifest it from the spiritual into the real world. </p>
         <p>As the practice is a “make-belief” system, whether manifestation can work or not highly depends on a person’s self confidence. To evaluate the power of manifestation, <a href="https://journals.sagepub.com/doi/10.1177/01461672231181162">social psychologists </a> categorize mindsets in relation to manifestation practice into two groups: personal power and cosmic collaboration. Personal power, apparently, relates to how a person believes in themselves. Cosmic collaboration refers to an individual’s imagined association with the universe or subliminal power.</p>
         <p style="color: #ba55d3;">Click below to see the full list of evaluation.</p>
 
@@ -992,38 +1040,55 @@
 
         <p style="font-size: 16px;"><i>*Political ideology: high scores meaning more conservative. The higher scores are closer to the outer circle.</i></p>
 
+        <p>Dr. Mitchell Saskin, a clinical psychologist with expertise in psychotherapy, confirmed that manifestation can help build self-confidence by breaking “limiting beliefs.” Sometimes, people fail to achieve the goal because they don’t believe they can do it. According to Saskin, the distrust is rooted in one’s “subconscious.” Through practices like meditation and manifestation, assisted by therapists, one is able to confront their subscious thinking and break the limited beliefs. </p>
+        <p>Besides making a clinical visit, videos trending on social media like youtube, known as “subliminal” or “subliminal booster”, claim that they have a similar impact on building self-confidence. The creators usually make videos that connect the goal one wants to achieve with visual or musical pieces. The videos aim to repeat the positive messages in a shorter period of time and change viewers’ mindset unconsciously through repetition. </p>
+        <p>The subliminal music has sounds in certain vibration, usually between five to eight hundred hertz. According to Saskin, this frequency helps to break forces like unconscious thinking to achieve a person’s goal. </p>
+        <p>Nevertheless, we should be aware of the creators’ intention: some claim that audiences need to purchase or subscribe to their channel in order to maximize the effect. For those famous influencers, a single piece could charge up to $500. </p>
+        <p>“If a person gets hooked on it or feels they're hooked and then they say they have to pay, that doesn't sound too ethical to me.” Saskin said.</p>
+        <p>After listening to the subliminal piece below, Dr. Dan Tomasulo, the director of Spirituality Institute at Columbia University frowned and said, “social media doesn’t define manifestation in the right way.”</p>
+        
         <div class="video-wrapper">
         <video controls>
             <source src="love.mp4" type="video/mp4">
         </video>
         </div>
 
-
-        
-        <p>Mela named her cafe “Sorate,” meaning “to keep calm” in Italian. She appreciated Japanese traditional tea ceremony in matcha making. Besides drinks, the teahouse sells ceremonial-grade matcha powders and handcrafted accessories. All the ceramics are designed by a popular Japanese artist Awami Aoki.</p>
-        
-
-
         <br>
-        <br>
-        <p>Unlike many trendy cafes, Sorate doesn’t experiment with creative matcha drinks. Instead, she offers traditional matcha tea and latte with options of three powder grades: house, superior (Soku), and premium—each differing in bitterness and aroma.</p>
-        <p>Besides tea houses that focus on matcha drinks, more coffee and milk tea stores also add matcha to their menu.</p>
-        <!-- INTERACTIVE MAP SECTION -->
-        <h2 style="font-family: 'Lora', Georgia, serif; margin-bottom: 0.5em;">Find Local Matcha Stores</h2>
-
-        <br>
-        <p>For serious matcha fans, New York city still has a long way to go.</p>
-        <p>“Most matcha tastes cheap with inflated prices but low quality.” said Yuki Li, a food blogger and influencer on RedNotes.</p>
-        <p>Still, she is willing to pay a higher price if the matcha is really good. “There’s one place in Williamsburg I’ll go by subway for an hour,” she says, “the price is higher, but it’s worth it.”</p>
-        <p>Matcha, for many, is not only a tik tok trend, but a lifestyle. The mixed bitter-sweet taste becomes a way to relax—and if it comes with a $7 price tag, so be it.</p>
+        <p>For Tomasulo, one can’t just manifest and “make things happen.” The immediate attraction to one’s Mr./Mrs Right, shown in this video, doesn’t make sense. </p>
+        <p>“It's taking partial ideas, a little tiny bit of science, but actually not very well put together.” Tomasulo said.</p>
+        <p>But a free subliminal piece won’t hurt. Just don’t rely on it too much—or you may end up manifesting an empty wallet.</p>
 
 
-    
+        <button class="collapsible-method">
+        🧪 Methods
+        <span class="icon">▶</span>
+        </button>
+        <div class="method-content">
+            <p>The original data used in the story draws from a peer-reviewed <a href="https://journals.sagepub.com/doi/10.1177/01461672231181162">study</a> published in the <em>Personality and Social Psychology Bulletin</em>. 
+                The research measured manifestation belief using an 11-item scale, spliting into two subscales: personal power and cosmic collaboration.</p>
+            
+            <p>The responses in the survey were on a Likert scale. Scores were coorlelated with demographic data like race, income, education, and political ideology.</p>
+            <p>Data visualizations in the article—the radar and bar chart—were created based on the correlation scores.</p>
+            <p>Only statistically significant relationships (p &lt; .05) were emphasized.</p>
+            <p>Other cited sources are directly from interviews.</p>
+        </div>
+
+        <script>
+        const coll = document.querySelector(".collapsible-method");
+        const content = document.querySelector(".method-content");
+        const icon = coll.querySelector(".icon");
+
+        coll.addEventListener("click", () => {
+            coll.classList.toggle("active");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+        </script>
+
 
     </div>
     <div class="footer">
         <div class="content">
-            <p><strong>Check the methods & codes <a href="https://github.com/Kristen-Shen/Kristen-Shen.github.io/tree/main/matcha">here</a></strong>.</p>
+            <p><strong>Check the methods & codes <a href="https://github.com/Kristen-Shen/Kristen-Shen.github.io/tree/main/manifestation">here</a></strong>.</p>
             <a href="mailto:hs3183@columbia.edu" class="icon is-medium mr-3">
                 <i class="fas fa-envelope fa-lg" style="color:white;"></i>
             </a>
