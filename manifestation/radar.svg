@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 800 600">
+  <!-- Generator: Adobe Illustrator 29.5.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 141)  -->
+  <defs>
+    <style>
+      .st0, .st1, .st2, .st3 {
+        fill: none;
+      }
+
+      .st1 {
+        stroke: #ccc;
+      }
+
+      .st4 {
+        fill-opacity: .3;
+        stroke: #9013fe;
+      }
+
+      .st4, .st5 {
+        fill: #9013fe;
+      }
+
+      .st6 {
+        font-family: Helvetica, Helvetica;
+        font-size: 10px;
+      }
+
+      .st6, .st7 {
+        isolation: isolate;
+      }
+
+      .st7 {
+        font-family: ArialMT, Arial;
+        font-size: 12px;
+      }
+
+      .st2 {
+        stroke: #d3d3d3;
+      }
+
+      .st8 {
+        fill: #fff;
+      }
+
+      .st3 {
+        stroke: #000;
+      }
+
+      .st9 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st0" x="40" y="-20" width="800" height="600"/>
+    </clipPath>
+  </defs>
+  <rect id="background" class="st8" x="40" y="-20" width="800" height="600"/>
+  <g class="st9">
+    <circle id="_x30_.55" class="st2" cx="473.58" cy="285.58" r="261"/>
+    <circle id="_x30_.5" class="st2" cx="473.58" cy="285.58" r="237"/>
+    <circle id="_x30_.45" class="st2" cx="473.58" cy="285.58" r="214"/>
+    <circle id="_x30_.4" class="st2" cx="473.58" cy="285.58" r="190"/>
+    <circle id="_x30_.35" class="st2" cx="473.58" cy="285.58" r="166"/>
+    <circle id="_x30_.3" class="st2" cx="473.58" cy="285.58" r="142"/>
+    <circle id="_x30_.25" class="st2" cx="473.58" cy="285.58" r="118"/>
+    <circle id="_x30_.2" class="st2" cx="473.58" cy="285.58" r="94"/>
+    <circle id="_x30_.15" class="st2" cx="473.58" cy="285.58" r="71"/>
+    <circle id="_x30_.1" class="st2" cx="473.58" cy="285.58" r="47"/>
+    <circle id="_x30_.05" class="st2" cx="473.58" cy="285.58" r="23"/>
+    <rect id="_x30_" class="st2" x="473.58" y="285.58"/>
+    <g>
+      <line class="st3" x1="473.58" y1="286.58" x2="473.58" y2=".58"/>
+      <text class="st7" transform="translate(462.91 -5.22)"><tspan x="0" y="0">Age</tspan></text>
+    </g>
+    <g>
+      <line class="st3" x1="472.63" y1="285.89" x2="744.63" y2="197.51"/>
+      <text class="st7" transform="translate(717.96 198.62)"><tspan x="0" y="0">Gender (F=1)</tspan></text>
+    </g>
+    <g>
+      <line class="st3" x1="472.99" y1="284.77" x2="641.1" y2="516.15"/>
+      <text class="st7" transform="translate(627.3 528.44)"><tspan x="0" y="0">Income</tspan></text>
+    </g>
+    <g>
+      <line class="st3" x1="474.17" y1="284.77" x2="306.06" y2="516.15"/>
+      <text class="st7" transform="translate(273.5 528.44)"><tspan x="0" y="0">Education</tspan></text>
+    </g>
+    <line class="st3" x1="474.53" y1="285.89" x2="202.53" y2="197.51"/>
+    <text class="st7" transform="translate(71.46 198.62)"><tspan x="0" y="0">Political Ideology(higher = more conservative)</tspan></text>
+    <g id="y_axis">
+      <path class="st3" d="M467.58.58h6v286h-6"/>
+      <g>
+        <line class="st3" x1="473.58" y1="19.58" x2="467.58" y2="19.58"/>
+        <text class="st6" transform="translate(445.12 22.78)"><tspan x="0" y="0">0.55</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="44.58" x2="467.58" y2="44.58"/>
+        <text class="st6" transform="translate(445.12 47.78)"><tspan x="0" y="0">0.50</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="68.58" x2="467.58" y2="68.58"/>
+        <text class="st6" transform="translate(445.12 71.78)"><tspan x="0" y="0">0.45</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="92.58" x2="467.58" y2="92.58"/>
+        <text class="st6" transform="translate(445.12 95.78)"><tspan x="0" y="0">0.40</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="116.58" x2="467.58" y2="116.58"/>
+        <text class="st6" transform="translate(445.12 119.78)"><tspan x="0" y="0">0.35</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="141.58" x2="467.58" y2="141.58"/>
+        <text class="st6" transform="translate(445.12 144.78)"><tspan x="0" y="0">0.30</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="165.58" x2="467.58" y2="165.58"/>
+        <text class="st6" transform="translate(445.12 168.78)"><tspan x="0" y="0">0.25</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="189.58" x2="467.58" y2="189.58"/>
+        <text class="st6" transform="translate(445.12 192.78)"><tspan x="0" y="0">0.20</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="213.58" x2="467.58" y2="213.58"/>
+        <text class="st6" transform="translate(445.12 216.78)"><tspan x="0" y="0">0.15</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="238.58" x2="467.58" y2="238.58"/>
+        <text class="st6" transform="translate(445.12 241.78)"><tspan x="0" y="0">0.10</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="262.58" x2="467.58" y2="262.58"/>
+        <text class="st6" transform="translate(445.12 265.78)"><tspan x="0" y="0">0.05</tspan></text>
+      </g>
+      <g>
+        <line class="st3" x1="473.58" y1="286.58" x2="467.58" y2="286.58"/>
+        <text class="st6" transform="translate(445.12 289.78)"><tspan x="0" y="0">0.00</tspan></text>
+      </g>
+    </g>
+    <g id="radars">
+      <g id="_x30_1" data-name="_x30_">
+        <path class="st4" d="M473.58,64.58l251.08,139.42-114.12,270.08-262.74-15.37L207.29,199.06,473.58,64.58Z"/>
+        <g id="dots">
+          <circle class="st5" cx="473.58" cy="64.58" r="5"/>
+          <circle class="st5" cx="724.66" cy="204" r="5"/>
+          <circle class="st5" cx="610.53" cy="474.08" r="5"/>
+          <circle class="st5" cx="347.79" cy="458.71" r="5"/>
+          <circle class="st5" cx="207.29" cy="199.06" r="5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="grid">
+    <rect class="st1" x="40" y="-20" width="800" height="600"/>
+  </g>
+</svg>
