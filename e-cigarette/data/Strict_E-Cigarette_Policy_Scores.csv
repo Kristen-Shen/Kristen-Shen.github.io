@@ -1,0 +1,59 @@
+LocationDesc,StrongRestriction,StrongEnforcement,StrongPenalty,SeriousnessScore
+Alabama,0,1,1,2
+Alaska,0,0,1,1
+American Samoa,0,0,0,0
+Arizona,0,0,1,1
+Arkansas,0,1,1,2
+California,0,0,1,1
+Colorado,0,1,1,2
+Connecticut,0,0,1,1
+Delaware,0,1,1,2
+District of Columbia,0,1,1,2
+Florida,0,1,1,2
+Georgia,0,0,1,1
+Guam,0,1,1,2
+Hawaii,0,1,1,2
+Idaho,0,1,1,2
+Illinois,0,0,1,1
+Indiana,0,1,0,1
+Iowa,0,1,1,2
+Kansas,0,1,1,2
+Kentucky,0,0,1,1
+Louisiana,0,1,1,2
+Maine,0,1,1,2
+Marshall Islands,0,0,0,0
+Maryland,0,1,0,1
+Massachusetts,0,0,1,1
+Michigan,0,0,1,1
+Minnesota,0,0,1,1
+Mississippi,0,1,1,2
+Missouri,0,1,1,2
+Montana,0,0,1,1
+Nebraska,0,0,1,1
+Nevada,0,1,1,2
+New Hampshire,0,1,1,2
+New Jersey,0,1,1,2
+New Mexico,0,1,1,2
+New York,0,1,1,2
+North Carolina,0,1,0,1
+North Dakota,0,0,1,1
+Northern Mariana Islands,0,1,1,2
+Ohio,0,1,0,1
+Oklahoma,0,0,1,1
+Oregon,0,0,1,1
+Palau,0,0,1,1
+Pennsylvania,0,0,1,1
+Puerto Rico,0,0,1,1
+Rhode Island,0,1,1,2
+South Carolina,0,1,1,2
+South Dakota,0,1,1,2
+Tennessee,0,0,1,1
+Texas,0,1,1,2
+U.S. Virgin Islands,0,0,1,1
+Utah,0,1,1,2
+Vermont,0,0,1,1
+Virginia,0,1,1,2
+Washington,0,0,1,1
+West Virginia,0,1,1,2
+Wisconsin,0,1,1,2
+Wyoming,0,1,1,2

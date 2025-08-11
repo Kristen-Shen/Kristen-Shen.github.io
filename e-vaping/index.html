@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-cigarette</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-rendering: optimizeLegibility;
+        }
+        .content { max-width: 640px; margin: auto; }
+        .header { padding: 3em 0; }
+        a { color: #FFB6C1; }
+
+        .footer {
+            background-color: #6366c4;
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 4em;
+            padding: 4em 0;
+            color: white;
+        }
+        figure { margin: 0; padding-bottom: 1.2em; }
+        figcaption { font-size: 0.8em; text-align: center; margin-top: 0.5em; color: #666; }
+        h1 { font-family: 'Lora', Georgia, serif; font-weight: bold; font-size: 3em; line-height: 1.1; }
+        .subhead { font-family: 'Lora', Georgia, serif; }
+        .full-width figure { text-align: center; }
+        iframe, img, video { max-width: 100%; }
+        p { line-height: 1.6; margin: 0; padding-bottom: 1.2em; }
+        ul { margin: 0; padding-bottom: 1em; line-height: 1.6; }
+        iframe { padding-bottom: 1.2em; }
+        code { font-family: 'Courier New', monospace; background: #fff880; }
+
+        /* responsive body image*/
+        .figure-float-left { float: left; width: 250px; margin: 0 15px 10px 0; }
+        .figure-float-left img { max-width: 100%; height: auto; display: block; }
+        .center-container { display: flex; justify-content: center; align-items: center; height: 100%; }
+
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            background-color: #5a7bb8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover { background-color: #45a049; }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 1rem;
+            border-radius: 8px;
+            width: fit-content;
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            top: 5px; right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* table */
+        .table-container-interactive {
+            max-width: 100%;
+            margin: 20px 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .table-header-interactive {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .table-title-interactive { font-size: 1.5em; font-weight: bold; margin: 0; }
+        .table-subtitle-interactive { font-size: 0.9em; opacity: 0.9; margin: 5px 0 0 0; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background-color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #ddd; padding: 16px; text-align: left; }
+        th { background-color: #5a7bb8; color: black; }
+        td:last-child { font-weight: bold; font-size: 1.1em; }
+        tr:nth-child(even) { background-color: #f4f6fb; }
+
+        /* Interactive table */
+        .interactive-table { border: none; box-shadow: none; margin-top: 0; }
+        .interactive-table th {
+            background: linear-gradient(135deg, #a8d5e2 0%, #b8e6c1 100%);
+            padding: 20px 16px; font-weight: bold; color: #2c3e50;
+            font-size: 1.1em; text-align: center; border-bottom: 3px solid #e9ecef; border: none;
+        }
+        .interactive-table td {
+            padding: 20px 16px; text-align: center; border-bottom: 1px solid #e9ecef; border: none;
+            transition: all 0.3s ease; vertical-align: middle;
+        }
+        .interactive-table tr { transition: all 0.3s ease; cursor: pointer; position: relative; }
+        .interactive-table tr[data-type]:hover {
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            transform: translateX(5px); box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .badge-interactive { padding: 8px 16px; border-radius: 25px; font-weight: bold; font-size: 0.9em; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; cursor: pointer; }
+        .badge-interactive:hover { transform: scale(1.1); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .badge-mild { background: linear-gradient(135deg, #52c234, #61d345); color: white; }
+        .badge-moderate { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; }
+        .badge-strong { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
+        .type-cell { font-weight: bold; font-size: 1.1em; color: #2c3e50; }
+        .explanation-cell { font-style: italic; color: #5d6d7e; line-height: 1.4; }
+        .detail-panel { display: none; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 20px; border-left: 4px solid #667eea; margin: 10px 0; border-radius: 0 8px 8px 0; animation: slideDown 0.3s ease; }
+        .detail-panel.show { display: table-row; }
+        @keyframes slideDown { from { opacity: 0; max-height: 0; padding: 0 20px; } to { opacity: 1; max-height: 200px; padding: 20px; } }
+        .detail-title { font-weight: bold; color: #2c3e50; margin-bottom: 10px; }
+        .detail-examples { color: #5d6d7e; line-height: 1.5; }
+        .click-hint { text-align: center; padding: 15px; color: #7f8c8d; font-style: italic; background: #f8f9fa; font-size: 0.9em; }
+        .progress-bar { height: 4px; background: #e9ecef; border-radius: 2px; overflow: hidden; margin-top: 10px; }
+        .progress-fill { height: 100%; border-radius: 2px; transition: width 0.8s ease; }
+        .mild-progress { background: linear-gradient(90deg, #52c234, #61d345); }
+        .moderate-progress { background: linear-gradient(90deg, #f39c12, #e67e22); }
+        .strong-progress { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+
+        /* D3 Chart Styles */
+        .chart-container { background: transparent; padding: 30px 0; margin: 2em 0; display: flex; flex-direction: column;
+            align-items: center;
+            width: 100%;}
+        .chart-title { font-size: 1.4em; font-weight: bold; text-align: left; margin-bottom: 10px; color: #333; font-family: 'Lora', Georgia, serif; }
+        .chart-subtitle { font-size: 0.9em; text-align: left; color: #666; font-style: italic; margin-bottom: 30px; }
+        .axis { font-size: 12px; color: #666; }
+        .grid-line { stroke: #e0e0e0; stroke-dasharray: 2,2; }
+        .line { fill: none; stroke-width: 2.5; }
+        .dot { stroke-width: 2; stroke: white; }
+        .annotation-box { fill: rgba(128, 128, 128, 0.1); stroke: #888; stroke-width: 1; stroke-dasharray: 3,3; }
+        .annotation-text { font-size: 12px; fill: #333; font-weight: bold; }
+        .flavor-label { font-size: 12px; font-weight: bold; }
+        .label-arrow { stroke-width: 1; fill: none; }
+        .chart-note { font-size: 11px; color: #666; text-align: right; margin-top: 20px; line-height: 1.4; }
+        .chart-source { font-size: 11px; color: #666; text-align: right; margin-top: 20px; line-height:1.4; }
+
+        /* margin on mobile */
+        @media (max-width: 640px) {
+            body { font-size: 18px; }
+            .content { padding-left: 0.5em; padding-right: 0.5em; }
+            .figure-float-left { float: none; width: 100%; margin: 0 auto 1em auto; }
+            .chart-container { padding: 20px 10px; }
+            #d3-chart { overflow-x: auto; }
+        }
+    </style>
+
+    <style>
+        .with-image-bg,
+        .with-video-bg {
+            position: relative;
+            background-size: cover;
+            margin-bottom: 2em;
+            min-height: 70svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 0px 0px 30px black, 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .with-image-bg { background-image: url('hor.jpg'); }
+        .video-background { position: absolute; top: 0; width: 100%; height: 100%; z-index: -1; }
+        .video-background video { object-fit: cover; width: 100%; height: 100%; }
+    </style>
+</head>
+
+<body>
+    <div class="header with-image-bg">
+        <div class="content">
+            <h1>Sweet-Flavored E-Vapes Still Hook Teens, Despite Stricter Laws</h1>
+            <p class="subhead">E-cigarettes are banned but not gone. Despite the tightened restrictions, fruity and candy-taste ones are still trendy among teenages.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="byline">
+            <p>By <a href="https://kristen-shen.github.io/">Kristen Shen</a></p>
+        </div>
+
+        <figure class="figure-float-left">
+            <img src="vert.jpg" alt="Image of e-vaper">
+            <figcaption style="font-size: 0.9em;">E-cigarettes' appearance</figcaption>
+        </figure>
+
+        <p>The popularity of e-cigarettes among teenages has concerned federal and state governments since 2021. 
+            U.S. Food & Drug Administration tightened its enforcement policy on flavored e-cigarettes and issued more than <a href="https://www.fda.gov/news-events/congressional-testimony/epidemic-continues-youth-vaping-america-06232021#:~:text=On%20January%202%2C%202020%2C%20amid,of%20ENDS%20by%20underage%20persons">120 warning letters</a>
+            to firms selling or distributing unauthorized electronic nicotine. 
+            <a href="https://www.cdc.gov/statesystem/factsheets/ecigarette/ECigarette.html#:~:text=As%20of%20September%2030%2C%202024%2036%20states%20(Alabama%2C%20Alaska,cigarettes%20over%2Dthe%2Dcounter">Multiple states and municipalities</a> also intensified their regulation, banning the shipment of flavored e-cigarettes.
+        </p>
+        <p></p>
+        <br>
+        <p><a href="https://healthdata.gov/dataset/CDC-STATE-System-E-Cigarette-Legislation-Youth-Acc/4a8m-9cpy/about_data">Legislation</a> on e-cigarette from 1995 to 2025, in general, can be divided based on the types of enactments.</p>
+  
+
+        <!-- Interactive table -->
+        <div class="table-container-interactive">
+            <div class="table-header-interactive">
+                <h3 class="table-title-interactive">E-cigarette Legislation Framework</h3>
+                <p class="table-subtitle-interactive">Click on any row to explore detailed examples and state implementations</p>
+            </div>
+            
+            <table class="interactive-table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Explanation</th>
+                        <th>Strictness Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-type="restriction" onclick="toggleDetailsInteractive(this)">
+                        <td class="type-cell">Restriction</td>
+                        <td class="explanation-cell">Law exists (e.g. banning sales to minors)</td>
+                        <td>
+                            <span class="badge-interactive badge-mild">🟡 Mild</span>
+                            <div class="progress-bar"><div class="progress-fill mild-progress" style="width: 0%"></div></div>
+                        </td>
+                    </tr>
+                    <tr class="detail-panel" id="restriction-details">
+                        <td colspan="3">
+                            <div class="detail-title">📋 Details</div>
+                            <div class="detail-examples">
+                                Common Restrictions
+                                Minimum age requirements (18 or 21 years)<br>
+                                ID verification requirements<br>
+                                Prohibition of sales in schools or playgrounds<br>
+                                Flavor restrictions in certain locations<br><br>
+                                Particular States: Most states have basic age restrictions. States like Texas and Florida have comprehensive restriction frameworks without heavy enforcement mechanisms.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr data-type="enforcement" onclick="toggleDetailsInteractive(this)">
+                        <td class="type-cell">Enforcement</td>
+                        <td class="explanation-cell">State actively checks or monitors compliance</td>
+                        <td>
+                            <span class="badge-interactive badge-moderate">🟠 Moderate</span>
+                            <div class="progress-bar"><div class="progress-fill moderate-progress" style="width: 0%"></div></div>
+                        </td>
+                    </tr>
+                    <tr class="detail-panel" id="enforcement-details">
+                        <td colspan="3">
+                            <div class="detail-title">🔍 Details</div>
+                            <div class="detail-examples">
+                                <strong>Enforcement Mechanisms</strong><br>
+                                Regular compliance checks and inspections<br>
+                                Sting operations using underage volunteers<br>
+                                Licensing and permit monitoring<br>
+                                Online sales monitoring<br><br>
+                                Particular States: Illinois and Massachusetts actively conduct compliance checks. Washington State has robust online monitoring systems for e-cigarette sales.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr data-type="penalty" onclick="toggleDetailsInteractive(this)">
+                        <td class="type-cell">Penalty</td>
+                        <td class="explanation-cell">Fines or license actions for violations</td>
+                        <td>
+                            <span class="badge-interactive badge-strong">🔴 Strongest</span>
+                            <div class="progress-bar"><div class="progress-fill strong-progress" style="width: 0%"></div></div>
+                        </td>
+                    </tr>
+                    <tr class="detail-panel" id="penalty-details">
+                        <td colspan="3">
+                            <div class="detail-title">⚖️ Details</div>
+                            <div class="detail-examples">
+                                <strong>Penalty Types</strong><br>
+                                Monetary fines ($500 - $10,000+ per violation)<br>
+                                License suspension or revocation<br>
+                                Criminal charges for repeat offenders<br>
+                                Mandatory compliance training<br><br>
+                                <strong>Particular States:</strong> California and New York impose hefty fines up to $10,000. Utah and Vermont have license revocation policies for serious violations.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="click-hint">💡 Click on any row above to see detailed examples and state implementations</div>
+        </div>
+
+        <p>However, the intensity of the enforcement varies. 
+            <a href="https://www.publichealthlawcenter.org/sites/default/files/inline-files/ECigarette-Legal-Landscape-June152024.pdf">Some</a> enacted stricter regulations like banning online and in-store purchases with fining or education. 
+            Others allow in person retail or penalty with paying a little amount of fine. Flavor-specified restrictions also differ. 
+            States like New York and California even specify the prohibition of selling specific flavors—including fruit, mint, and candy-flavored ones. </p>
+
+        <!-- map -->
+        <div style="min-height:400px" id="datawrapper-vis-qARKD">
+            <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/qARKD/embed.js" charset="utf-8" data-target="#datawrapper-vis-qARKD"></script>
+            <noscript><img src="https://datawrapper.dwcdn.net/qARKD/full.png" alt="" /></noscript>
+        </div>
+
+        <br>
+
+        <p>Based on the National Youth Tobacco Survey, non-tobacco flavored e-cigarettes have been especially appealing to middle and high school students. 
+            Beneath the sweetness on the tongue lies harm potentially more severe than traditional cigarettes. 
+            The good-tasting flavors are made by multiple chemicals, which can <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8424560/?utm_source=chatgpt.com">damage cells in a person's airway</a>, causing respiratory issues. The flavor chemicals also weaken immunity in the lung, increasing the risk of lung cancer and relevant breathing problems.</p>
+      
+        <!-- chart 2023 trend here -->
+        <div style="min-height:400px" id="datawrapper-vis-h1PCX">
+            <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/h1PCX/embed.js" charset="utf-8" data-target="#datawrapper-vis-h1PCX"></script>
+            <noscript><img src="https://datawrapper.dwcdn.net/h1PCX/full.png" alt="" /></noscript>
+        </div>
+
+        <br>
+
+        <p>The regulatory measures had an immediate impact. The decline of all flavored e-cigarettes in 2021 reflects the stricter regulatory process. However, based on the National Youth Tobacco Survey, evaluating youth consumption of commercial tobacco, e-cigarettes with flavors like fruit, sweets, mint, and menthol remain popular. After hitting the trough, all flavored e-cigarettes started to bounce back, leading by the fruit flavor.</p>
+
+        <!-- D3.js Chart -->
+        <div class="chart-container">
+            <div class="chart-title">Fruity e-cigarette remains trendy for teenagers</div>
+            <div class="chart-subtitle">The e-cigarette flavor U.S. middle and high school students prefer by percentage from 2020 to 2023</div>
+            <div id="d3-chart">
+                <svg id="chart"></svg>
+            </div>
+            <div class="chart-note">
+                The chart removes three flavors only mentioned in the 2023 survey: 'tobacco-flavor', 'non-alcoholic drink', and 'unflavored'.<br>
+                The chart doesn't include the group of teenagers not consuming e-cigarettes.<br><br>
+                By Kristen Shen<br>
+                Source: National Youth Tobacco Survey
+            </div>
+        </div>
+
+        <p>Unlike adult smokers often drawn to the taste of traditional tobacco, teenagers' persistent attraction to sweet-flavored e-cigarettes suggest that their vaping habit may stem from different motivations. For some, it's the appeal to the sweetness of  fruity or candy-like flavors; for others, it can be about social belonging or peer influence. On the journey to reduce teenage vaping rates, legal enforcement alone isn't enough. Understanding the reasons behind—whether social or psychological—are also essential. Without addressing the causes, despite restrictions, they can always find alternative ways and places to access e-cigarettes. </p>
+        <p><i>*Currently the survey's datasets post-2019 are not available due to President Trump's Executive Orders.</i> </p> 
+
+    </div>
+
+    <div class="footer">
+        <div class="content">
+            <p><strong>Check the methods & codes <a href="https://github.com/Kristen-Shen/Kristen-Shen.github.io/tree/main/e-cigarette">here</a></strong>.</p>
+            <a href="mailto:hs3183@columbia.edu" class="icon is-medium mr-3"><i class="fas fa-envelope fa-lg" style="color:white;"></i></a>
+            <a href="https://www.linkedin.com/in/kristen-he-shen-85a520214" class="icon is-medium mr-3"><i class="fab fa-linkedin fa-lg" style="color:white;"></i></a>
+            <a href="https://github.com/Kristen-Shen" class="icon is-medium mr-3"><i class="fab fa-github fa-lg" style="color:white;"></i></a>
+            <a href="https://www.instagram.com/krishen_river" class="icon is-medium mr-3"><i class="fab fa-instagram fa-lg" style="color:white;"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // D3.js Chart Script 
+        const data = [
+            {flavor: "Fruit", color: "#90EE90", values: [{year: 2020, value: 7.7}, {year: 2021, value: 4.2}, {year: 2022, value: 5.2}, {year: 2023, value: 4.5}]},
+            {flavor: "Mint", color: "#B0E0E6", values: [{year: 2020, value: 5.7}, {year: 2021, value: 1.7}, {year: 2022, value: 2.1}, {year: 2023, value: 2.0}]},
+            {flavor: "Sweets", color: "#9370DB", values: [{year: 2020, value: 4.0}, {year: 2021, value: 2.1}, {year: 2022, value: 2.8}, {year: 2023, value: 2.4}]},
+            {flavor: "Menthol", color: "#87CEEB", values: [{year: 2020, value: 3.7}, {year: 2021, value: 1.7}, {year: 2022, value: 2.0}, {year: 2023, value: 1.5}]},
+            {flavor: "Alcoholic drinks", color: "#D3D3D3", values: [{year: 2020, value: 0.5}, {year: 2021, value: 0.3}, {year: 2022, value: 0.5}, {year: 2023, value: 0.4}]},
+            {flavor: "Chocolate", color: "#8B4513", values: [{year: 2020, value: 0.5}, {year: 2021, value: 0.2}, {year: 2022, value: 0.3}, {year: 2023, value: 0.2}]},
+            {flavor: "Spice", color: "#FF8C00", values: [{year: 2020, value: 0.1}, {year: 2021, value: 0.1}, {year: 2022, value: 0.2}, {year: 2023, value: 0.1}]}
+        ];
+
+        const margin = {top: 20, right: 120, bottom: 60, left: 60};
+        const width = 850 - margin.left - margin.right;
+        const height = 320 - margin.bottom - margin.top;
+
+        const svg = d3.select("#chart")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom);
+
+        const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+        const xScale = d3.scaleLinear().domain([2020, 2023]).range([0, width]);
+        const yScale = d3.scaleLinear().domain([0, 8]).range([height, 0]);
+
+        const yTicks = [0, 2, 4, 6, 8];
+        g.selectAll(".grid-line")
+            .data(yTicks)
+            .enter()
+            .append("line")
+            .attr("class", "grid-line")
+            .attr("x1", 0).attr("x2", width)
+            .attr("y1", d => yScale(d))
+            .attr("y2", d => yScale(d));
+
+        const annotationX = xScale(2020);
+        const annotationWidth = xScale(2021) - annotationX;
+        g.append("rect").attr("class", "annotation-box").attr("x", annotationX).attr("y", 0).attr("width", annotationWidth).attr("height", height);
+        g.append("text").attr("class", "annotation-text").attr("x", annotationX + annotationWidth/2).attr("y", 25).attr("text-anchor", "middle").text("FDA Enforcement Action");
+
+        const line = d3.line().x(d => xScale(d.year)).y(d => yScale(d.value)).curve(d3.curveMonotoneX);
+
+        data.forEach(flavorData => {
+            g.append("path").datum(flavorData.values).attr("class", "line").attr("d", line).attr("stroke", flavorData.color);
+            g.selectAll(`.dot-${flavorData.flavor.replace(/\\s+/g, '')}`)
+                .data(flavorData.values)
+                .enter()
+                .append("circle")
+                .attr("class", "dot")
+                .attr("cx", d => xScale(d.year))
+                .attr("cy", d => yScale(d.value))
+                .attr("r", 4)
+                .attr("fill", flavorData.color);
+        });
+
+        const labelPositions = [
+            {flavor: "Fruit", y: yScale(4.5)},
+            {flavor: "Sweets", y: yScale(2.4)},
+            {flavor: "Mint", y: yScale(2.0)},
+            {flavor: "Menthol", y: yScale(1.5)},
+            {flavor: "Alcoholic drinks", y: yScale(0.9)},
+            {flavor: "Chocolate", y: yScale(0.5)},
+            {flavor: "Spice", y: yScale(0.1)}
+        ];
+
+        data.forEach(flavorData => {
+            const lastPoint = flavorData.values[flavorData.values.length - 1];
+            const actualY = yScale(lastPoint.value);
+            const labelPos = labelPositions.find(pos => pos.flavor === flavorData.flavor);
+            const labelY = labelPos.y;
+            
+            if (Math.abs(actualY - labelY) > 5) {
+                g.append("path")
+                    .attr("class", "label-arrow")
+                    .attr("d", `M${width + 8},${labelY} L${width + 2},${actualY}`)
+                    .attr("stroke", flavorData.color)
+                    .attr("marker-end", "url(#arrowhead-" + flavorData.flavor.replace(/\\s+/g, '') + ")");
+                
+                const defs = svg.append("defs");
+                defs.append("marker")
+                    .attr("id", "arrowhead-" + flavorData.flavor.replace(/\\s+/g, ''))
+                    .attr("viewBox", "0 0 10 10")
+                    .attr("refX", 8).attr("refY", 3)
+                    .attr("markerWidth", 6).attr("markerHeight", 6)
+                    .attr("orient", "auto")
+                  .append("path").attr("d", "M0,0 L0,6 L9,3 z").attr("fill", flavorData.color);
+            }
+            
+            g.append("text")
+                .attr("class", "flavor-label")
+                .attr("x", width + 12)
+                .attr("y", labelY + 4)
+                .attr("fill", flavorData.color)
+                .text(flavorData.flavor);
+        });
+
+        const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d")).ticks(4);
+        const yAxis = d3.axisLeft(yScale).tickFormat(d => d + "%").tickValues(yTicks);
+        g.append("g").attr("class", "axis").attr("transform", `translate(0,${height})`).call(xAxis);
+        g.append("g").attr("class", "axis").call(yAxis);
+
+        function makeResponsive() {
+            const container = document.getElementById('d3-chart');
+            const containerWidth = container.getBoundingClientRect().width;
+            if (containerWidth < 600) {
+                svg.attr("width", containerWidth).attr("height", Math.min(400, containerWidth * 0.7));
+            }
+        }
+        window.addEventListener('resize', makeResponsive);
+        makeResponsive();
+    </script>
+
+    <!-- External JS just for the interactive table -->
+    <script src="interactive_table.js"></script>
+</body>
+</html>
