@@ -17,8 +17,8 @@ I also researched relevant [legislation](https://healthdata.gov/dataset/CDC-STAT
 ### Visualization 
 - [heat map](https://www.datawrapper.de/_/qARKD/):`pandas` + `python` for data cleaning; `datawrapper`for charting
 - [bar chart](https://www.datawrapper.de/_/h1PCX/?v=3): `pandas` + `python` for data cleaning; `datawrapper`for charting
-- [line chart](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/e-cigarette/my_chart_final.png): `pandas` + `python` for data cleaning; `ggplot`for charting
-- [table](https://kristen-shen.github.io/e-cigarette/): `html` + `css` + `javascript`for charting and web design
+- [line chart](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/e-vaping/my_chart_final.png): `pandas` + `python` for data cleaning; `ggplot`for charting
+- [table](https://kristen-shen.github.io/e-vaping/): `html` + `css` + `javascript`for charting and web design
 - body image with text wrap: `html` + `css` web design
 
 ## ✨ Inspiration 
@@ -39,11 +39,11 @@ I also researched relevant [legislation](https://healthdata.gov/dataset/CDC-STAT
 </p>
 
 ## 🗄️ Files in the Repo
-- `flavor_chart.ipynb`: data cleaning and ggplot for [line chart](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/e-cigarette/my_chart_final.png)
-- `e-cigarette-data.csv` & `new_flavor.csv`: data filtered to create the [bar chart](https://www.datawrapper.de/_/h1PCX/?v=3) and the [line chart](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/e-cigarette/my_chart_final.png)
+- `flavor_chart.ipynb`: data cleaning and ggplot for [line chart](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/e-vaping/my_chart_final.png)
+- `e-cigarette-data.csv` & `new_flavor.csv`: data filtered to create the [bar chart](https://www.datawrapper.de/_/h1PCX/?v=3) and the [line chart](https://github.com/Kristen-Shen/Kristen-Shen.github.io/blob/main/e-vaping/my_chart_final.png)
 - `nyts-dataset-codebook`: reference to the National Youth Tabacco Survey's methodology and all questions
     - Currently the survey’s datasets post-2019 are not available due to President Trump’s Executive Orders. 
-- `E-Cigarette Legislation Youth Access.csv`: numerical evaluation of e-cigarette legislation's degree of seriousness; used for the [heat map](https://www.datawrapper.de/_/qARKD/) and the [table](https://kristen-shen.github.io/e-cigarette/)
+- `E-Cigarette Legislation Youth Access.csv`: numerical evaluation of e-cigarette legislation's degree of seriousness; used for the [heat map](https://www.datawrapper.de/_/qARKD/) and the [table](https://kristen-shen.github.io/e-vaping/)
     - original dataset is available to download [here](https://healthdata.gov/dataset/CDC-STATE-System-E-Cigarette-Legislation-Youth-Acc/4a8m-9cpy/about_data) 
 
 ## 📝 Contact me! 
