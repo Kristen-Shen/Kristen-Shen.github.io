@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>E-cigarette</title>
+    <title>E-vaping</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- Google fonts -->
@@ -45,7 +45,7 @@
         iframe { padding-bottom: 1.2em; }
         code { font-family: 'Courier New', monospace; background: #fff880; }
 
-        /* responsive body image*/
+        /* responsive image*/
         .figure-float-left { float: left; width: 250px; margin: 0 15px 10px 0; }
         .figure-float-left img { max-width: 100%; height: auto; display: block; }
         .center-container { display: flex; justify-content: center; align-items: center; height: 100%; }
@@ -146,7 +146,7 @@
         .moderate-progress { background: linear-gradient(90deg, #f39c12, #e67e22); }
         .strong-progress { background: linear-gradient(90deg, #e74c3c, #c0392b); }
 
-        /* D3 Chart Styles */
+        /* D3 Chart*/
         .chart-container { background: transparent; padding: 30px 0; margin: 2em 0; display: flex; flex-direction: column;
             align-items: center;
             width: 100%;}
@@ -163,7 +163,7 @@
         .chart-note { font-size: 11px; color: #666; text-align: right; margin-top: 20px; line-height: 1.4; }
         .chart-source { font-size: 11px; color: #666; text-align: right; margin-top: 20px; line-height:1.4; }
 
-        /* margin on mobile */
+        /* mobile */
         @media (max-width: 640px) {
             body { font-size: 18px; }
             .content { padding-left: 0.5em; padding-right: 0.5em; }
@@ -323,7 +323,7 @@
             Beneath the sweetness on the tongue lies harm potentially more severe than traditional cigarettes. 
             The good-tasting flavors are made by multiple chemicals, which can <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8424560/?utm_source=chatgpt.com">damage cells in a person's airway</a>, causing respiratory issues. The flavor chemicals also weaken immunity in the lung, increasing the risk of lung cancer and relevant breathing problems.</p>
       
-        <!-- chart 2023 trend here -->
+        <!-- flavor datawrapper-->
         <div style="min-height:400px" id="datawrapper-vis-h1PCX">
             <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/h1PCX/embed.js" charset="utf-8" data-target="#datawrapper-vis-h1PCX"></script>
             <noscript><img src="https://datawrapper.dwcdn.net/h1PCX/full.png" alt="" /></noscript>
@@ -333,7 +333,7 @@
 
         <p>The regulatory measures had an immediate impact. The decline of all flavored e-cigarettes in 2021 reflects the stricter regulatory process. However, based on the National Youth Tobacco Survey, evaluating youth consumption of commercial tobacco, e-cigarettes with flavors like fruit, sweets, mint, and menthol remain popular. After hitting the trough, all flavored e-cigarettes started to bounce back, leading by the fruit flavor.</p>
 
-        <!-- D3.js Chart -->
+        <!-- D3 Chart -->
         <div class="chart-container">
             <div class="chart-title">Fruity e-cigarette remains trendy for teenagers</div>
             <div class="chart-subtitle">The e-cigarette flavor U.S. middle and high school students prefer by percentage from 2020 to 2023</div>
@@ -364,7 +364,7 @@
     </div>
 
     <script>
-        // D3.js Chart Script 
+        // D3.js Script 
         const data = [
             {flavor: "Fruit", color: "#90EE90", values: [{year: 2020, value: 7.7}, {year: 2021, value: 4.2}, {year: 2022, value: 5.2}, {year: 2023, value: 4.5}]},
             {flavor: "Mint", color: "#B0E0E6", values: [{year: 2020, value: 5.7}, {year: 2021, value: 1.7}, {year: 2022, value: 2.1}, {year: 2023, value: 2.0}]},
@@ -475,7 +475,7 @@
         makeResponsive();
     </script>
 
-    <!-- External JS just for the interactive table -->
+    <!-- separate JS for interactive table -->
     <script src="interactive_table.js"></script>
 </body>
 </html>
