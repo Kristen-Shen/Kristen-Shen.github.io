@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generative AI Frustrates AO3 Community</title>
+  <meta name="description" content="From AI chatbots writing offensive comments to AI-written fic, AO3's community contends with authorship, trust, and creativity in the age of generative AI." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#f8fafc;
+      --text:#111827;
+      --muted:#64748b;
+      --accent:#2563eb;
+      --accent-2:#b45309;
+      --maxw: 900px;
+      --reading-measure: 75ch;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    a {
+      color: #580bcc;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    a:hover {
+      text-decoration: underline;
+      opacity: 0.85;
+    }
+    
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+    
+    header.hero {
+      padding: 80px 0 48px;
+      border-bottom: 1px solid #e2e8f0;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(134,225,249,.08), transparent 60%),
+        radial-gradient(800px 400px at 120% -10%, rgba(255,209,102,.06), transparent 60%);
+      position: relative;
+    }
+    
+    header.hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(37,99,235,0.015), rgba(180,83,9,0.015));
+      pointer-events: none;
+    }
+    
+    .kicker {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: 0.8rem;
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+    
+    h1 {
+      font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+      line-height: 1.1;
+      margin: 0.8rem 0 0;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      max-width: var(--reading-measure);
+    }
+    
+    .byline {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+    
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    .blurb {
+      font-size: 1.25rem;
+      color: var(--text);
+      margin-top: 28px;
+      line-height: 1.6;
+      max-width: var(--reading-measure);
+      font-weight: 400;
+    }
+
+    .content {
+      padding: 56px 0;
+    }
+    
+    .content p {
+      line-height: 1.8;
+      margin: 1.75rem 0;
+      font-size: 1.125rem;
+      max-width: var(--reading-measure);
+      font-weight: 400;
+    }
+    
+    .lede {
+      font-size: 1.35rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    
+    .dropcap::first-letter {
+      float: left;
+      font-size: 4.2rem;
+      line-height: 0.8;
+      padding: 0.3rem 0.7rem 0 0;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin: 4rem 0 1.5rem;
+      font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      max-width: var(--reading-measure);
+    }
+    
+    h3 {
+      margin: 2.5rem 0 1rem;
+      font-size: 1.3rem;
+      color: var(--accent-2);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    figure {
+      margin: 3rem 0;
+      padding: 0;
+    }
+    
+    figure .media {
+      width: 100%;
+      height: auto;
+      border: none;
+      border-radius: 16px;
+      display: block;
+      transition: var(--transition);
+     
+    }
+    
+    figure .media:hover {
+      transform: translateY(-4px);
+     
+    }
+    
+    figcaption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 16px;
+      font-style: italic;
+      text-align: left;
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      line-height: 1.5;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .chart {
+      background: var(--card);
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 24px;
+      margin: 3rem 0;
+      /* box-shadow: 0 4px 24px rgba(0,0,0,0.05); */
+    }
+    
+    .chart iframe {
+      width: 100%;
+      height: 520px;
+      border: 0;
+      border-radius: 12px;
+    }
+
+    blockquote {
+      margin: 3rem 0;
+      padding: 2rem 2.5rem;
+      border-left: 5px solid var(--accent);
+      background: linear-gradient(135deg, #f8fafc, #ffffff);
+      border-radius: 16px;
+      color: #374151;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      max-width: var(--reading-measure);
+    }
+    
+    blockquote p {
+      margin: 0;
+    }
+
+    .callout {
+      background: linear-gradient(180deg, rgba(37,99,235,.04), rgba(37,99,235,.02));
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 28px;
+      margin: 3rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .grid-2 {
+      display: grid;
+      gap: 32px;
+      grid-template-columns: 1fr;
+      margin: 4rem 0;
+    }
+    
+    @media(min-width: 900px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    footer {
+      margin-top: 96px;
+      padding: 40px 0;
+      border-top: 1px solid #e2e8f0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    
+    .copyright {
+      margin-top: 16px;
+      text-align: center;
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #475569;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      background: #f8fafc;
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    
+    .tag:hover {
+      background: #e2e8f0;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Enhanced typography */
+    strong {
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    /* Grid improvements for images */
+    .grid-2 figure {
+      margin: 0;
+    }
+    
+    .grid-2 .media {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+      .wrap {
+        padding: 24px 20px;
+      }
+      
+      header.hero {
+        padding: 60px 0 36px;
+      }
+      
+      .content {
+        padding: 40px 0;
+      }
+      
+      h2 {
+        margin: 3rem 0 1.25rem;
+      }
+      
+      .dropcap::first-letter {
+        font-size: 3.5rem;
+        padding: 0.2rem 0.5rem 0 0;
+      }
+      
+      blockquote {
+        padding: 1.5rem 1.75rem;
+        margin: 2.5rem 0;
+        font-size: 1.1rem;
+      }
+      
+      figure {
+        margin: 2.5rem 0;
+      }
+      
+      .chart {
+        padding: 20px;
+        margin: 2.5rem 0;
+      }
+      
+      .chart iframe {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        padding: 20px 16px;
+      }
+      
+      .content p {
+        font-size: 1.1rem;
+      }
+      
+      .lede {
+        font-size: 1.25rem;
+      }
+      
+      .blurb {
+        font-size: 1.15rem;
+      }
+      
+      .chart iframe {
+        height: 350px;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      html, body {
+        background: #fff;
+        color: #000;
+      }
+      
+      header.hero {
+        background: none;
+        border-bottom: 1px solid #111;
+      }
+      
+      a {
+        color: #000;
+        text-decoration: underline;
+      }
+      
+      .wrap {
+        max-width: 100%;
+        padding: 0;
+      }
+      
+      figure, .chart {
+        background: #fff;
+        border: 1px solid #d1d5db;
+        box-shadow: none;
+      }
+      
+      .chart iframe {
+        display: none;
+      }
+      
+      .chart::after {
+        content: "Chart: " attr(data-print-url) " (see online)";
+        display: block;
+        padding: 8px 0;
+        color: #000;
+        font-size: 0.9rem;
+      }
+      
+      .kicker, .byline, .meta, .blurb {
+        color: #000;
+      }
+      
+      .tag {
+        border: 1px solid #000;
+        background: #fff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="kicker">Master Project · 2025</div>
+      <h1>Generative AI Frustrates Fan Fiction Community with Disturbing Comments and AI Stories</h1>
+      <div class="byline">By <a href="https://kristen-shen.github.io/">Kristen Shen</a></div>
+      <br>
+      <div class="meta">
+        <span class="tag">Narrative &amp; Data &amp; Visuals</span>
+        <span class="tag">~ 2700 Words &amp; In 20 Minutes</span>
+      </div>
+      <p class="blurb">From AI chatbots writing offensive comments on stories in certain genres to AI scraping and auto‑generated stories, this community‑driven art form faces a new set of challenges around trust, authorship, and creativity.</p>
+    </div>
+  </header>
+
+  <main class="wrap content">
+
+    <section>
+      <p class="lede dropcap">One quiet midnight, Rose Ding returned to the Archive of Our Own, usually referred to as AO3, one of the world's most popular fan fiction sites, posting a short story celebrating her favorite anime character's birthday. It was her first article after a year's absence buried in schoolwork. Nervous but excited, she refreshed the page again and again, waiting for the first comment.
+
+     </p>
+     <p>But it hit hard.</p>
+     <figure>
+        <img src="img/lede.jpg" alt="AI comment" class="media">
+         <figcaption>This is the first comment Ding received on AO3 under her article.</figcaption>
+
+    </figure>
+
+
+      <p>"It's clear from the last few chapters that you're not passionate about the story anymore." Ding said that this sentence was the "most hurtful part" of the message, denying her commitment to fan fiction.
+      </p>
+      <p>"I was so sad and nervous at first," Ding said, "I even thought about deleting my account." </p>
+      <p>She shared the comment on RedNote, a popular Chinese social platform, and found she wasn't alone. Other creators have received the same message.</p>
+      <p>Because the wording of the comment is generic and lacks details connecting to the actual stories, Ding was suspicious that the comment might not have come from a person at all—but from a bot. </p>
+      <p><strong>Ding isn't alone. Since April last year, creators on AO3 have received suspicious spam comments—repetitive, emotionally flat, and often irrelevant to the stories. According to discussions on Tumblr, AO3 board announcements, and posts on RedNote, these AI-generated comments have quietly infiltrated the site, disturbing the close-knit fan culture community.</strong></p>
+    </section>
+
+    <section>
+      <h2>What AO3 Is</h2>
+      <p>The rise of generative AI has sparked new concern across the fan fiction community, which values emotional connection and human creativity. Many concerns that chatbot activity can disrupt the long-standing culture of mutual support and blur the concept of originality the site has cultivated since its founding.</p>
+      <p>"We needed a non-commercial space that would be entirely devoted to the interests of fans as producers of non-commercial creative works," said Rebecca Tushnet, a Harvard Law professor and one of the founders of the Organization for Transformative Works (OTW), the nonprofit that runs AO3.
+      </p>
+      <p>Launched in 2009, AO3 is the first nonprofit, volunteer-run platform where anyone can post fan fiction. It is the largest and most popular fan fiction site in the world, with more than 15 million fanworks by 8.8 million registered users by June this year. </p>
+      <p>In 2019, AO3 won the Hugo Award for Best Related Work, one of science fiction's highest honors. This was the first time a fan fiction platform received a major literary award, signaling a great recognition of fan labor as creative cultural production.</p>
+      
+      
+      <figure>
+        <img src="img/surge.png" alt="growth" class="media">
+    </figure>
+
+
+    <p>Tushnet called AO3 "a home for fan authors." it has no corporate backing and doesn't host ads or charge users a dime. Anyone is welcome to post their writing or other forms of creation on AO3. Genres range from "Harry Potter" to "My Hero Academia" (Manga), from "Marvel" to "Bangtan Boys", a popular South Korean boy band. </p>
+    
+    <iframe title="Harry Potter Slays in AO3 Fanwork Creation" aria-label="Bullet Bars" id="datawrapper-chart-Cknq9" src="https://datawrapper.dwcdn.net/Cknq9/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="367" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
+    </script>
+    <br> <br>
+    <iframe title="TOP 10 Fandoms on AO3" aria-label="Table" id="datawrapper-chart-BCrvn" src="https://datawrapper.dwcdn.net/BCrvn/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="700" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
+</script>  
+      
+    <p>Long-term engagement in specific fandoms foster tight-knit circles. Readers often build and sustain the relationship through comments—leaving praise, offering suggestions, or engaging in conversations that stretch across multiple works.
+</p>
+
+
+      <blockquote><p>"Thoughtful commenting fulfills a social need and facilitates the creative process," said Regina Cheng, a researcher in human-computer interaction with an expertise in fan fiction community affinity.</p></blockquote>
+      <p>As a writer herself, she said she reads every review and often connects with frequent commenters across platforms for beta reading and deeper collaboration.
+</p>
+      <p>In popular fandoms, there can be more than 20,000 comments with readers expressing their love and sharing thoughts on the creators' works.</p>
+     
+      <p>"I sometimes post comments to encourage writers to keep going as I can't wait to read more," said Cece Lin, a fan of the "Attack on Titan" manga. For Lin, commenting strengthens the bond between creators and readers from different backgrounds—and doubles as a conversation with herself.</p>
+    <p>"I reread a work I loved so much and was surprised to find a comment I left five years ago," Lin said. She was in high school then, overwhelmed by college entrance exams. Reading and talking with others sharing the same love of fandom helped her decompress. Reading her comments, to Lin, brought her "back to those good, old memories."</p>
+    
+    <p>But with the recent surge of chatbot activities, many writers are left unsure whether to trust the feedback—or even whether it came from a human.</p>
+    </section>
+
+    <section>
+      <h2>Spammy Comments Discourage Users on AO3</h2>
+      <p>Besides the comment from Ding accusing her lack of enthusiasm, another writer, with the script name "nonoregret," was hit with messages alleging her work was AI-generated. Fearing the claims would drive readers away, she spent two hours drafting a 350-word reply defending her writing. "I was panicked and hesitant if I should keep posting." she said.</p>
+      <figure>
+        <img src="img/comment2.png" alt="comment" class="media">
+        <figcaption>Comment "nonoregret" (script name) received under her article.</figcaption>
+    </figure>
+     
+      <p><strong>Like the ones nonoregret received, many comments accusing works of being AI-generated are, ironically, AI-generated themselves. These scam messages are often used to promote other AI tools, like AI essay editors or AI-detection services.
+</strong></p>
+      <blockquote><p>"The irony is that these AI-generated scams are created to advertise other AI services." Ding said.</p></blockquote>
+      <div>
+        <iframe title="What Spam AI-Comments Usually Look Like" aria-label="Table" id="datawrapper-chart-WCz6E" src="https://datawrapper.dwcdn.net/WCz6E/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="495" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
+</script>
+      </div>
+      <p>In a July board meeting, Qiao Chu, secretary of the OTW, acknowledged the problem. "We are aware that AI usage has contributed to an increase in spam," Chu said. To combat the issue, AO3 has lowered its comment rate limit—particularly for guest accounts—and implemented new filters.
+      <p>AO3 confirmed that several of its committees—including Policy & Abuse and Systems—are actively working to address the issue, according to a Tumblr post from July 15. According to the management team, chatbots are likely to leave or edit multiple comments over a short period. So adjusting the rate could slow down spammers and reduce frequent bot activities.</p>
+    <figure>
+        <img src="img/announce.png" alt="announcement" class="media">
+        <figcaption>AO3's update on its Tumblr account.</figcaption>
+    </figure>
+
+    <p>"The chance of a scam comment getting through now is one in a hundred," Tushnet said.</p>
+    <p>AO3 also tried to prioritize manual user traffic over bots and limited sign-ups to invitation only. Users can only register after receiving an invitation link, which typically takes an hour or more and requires further steps for real people verification. As many AI-generated spam are posted under guest accounts, the policy helps users flag likely bots or disable guest-commenting functions to reduce spam comments.</p>
+    <p>Still, the fixes aren't without trade-offs. During recent board meetings, some users raised concerns about rate-limiting features affecting legitimate interactions. One reader complained that they never received her invitation link, and another said they were blocked while trying to leave comments on their own work.</p>
+    <p>The management team acknowledged the frustration and emphasized that the goal is to reduce spam while optimizing user experience. "These spams are violating our terms of service, and our aim is to slow down the spammers with minimal impact on legitimate commenters," Chu said. </p>
+    </section>
+
+    <section>
+      <h2>Scraping, Fair Use, and Copyright</h2>
+      <p>​​AO3's open, free-to-join design makes it an easy target for bots, according to Tushnet. Beyond spam comments, the community worries about automated scraping that lets AI copy and repost their work elsewhere.</p>
+      <p>"When generative AI first emerged, AO3 was frequently scraped," Tushnet said. "Because we were such a large repository of online writing, we were kind of the first thing that places like open AI, along with Wikipedia, scraped."</p>
+      <p>Ding worried her work could be reposted elsewhere without credit. "Fan fiction is already a vulnerable community," she said. "If my work were stolen, it would be hard to assert my rights."</p>
+      <p>Tushnet, who published her first paper defending fan fiction as fair use and serves on the OTW's legal committee, said the legal team could support authors on copyright cases.</p>
+      <p>Copyright concerns ran high in the early 2000s, when the fan community was usually a space for profiting and commercial platforms imposed restrictive rules. Creators were often at legal risk for posting sexually explicit content or violating policies copyrights owners set. Tushnet pointed to  the copyright case of GI Joe—the authorized fan creations on Amazon, which specified that the character "Snake Eyes" has to be associated with Yankees. "They were just putting these arbitrary restrictions on what people could do," she said.</p>
+      
+       <blockquote><p>As the co-founder of AO3, Tushnet launched AO3 as a nonprofit to defend creators and resist the "purges that happened because advertisers got nervous."</p></blockquote>
+      <p>​​While copyright concerns haven't disappeared, Tushnet said they've eased as AO3 has grown, and some rights holders now view fan communities as promotional. Many fics expand on the original work and introduce new audiences back to it. </p>
+      <p>"I was drawn to one great fanfic based on a popular Chinese epic-fantasy film and decided to watch the movie," said Cece Lin, an avid fan fiction reader, adding that watching the original work helps her understand the context and engage more with the fan fiction community.</p>
+      <p>For AI scraping, however, Tushnet doesn't view it as a copyright violation, saying that  training on publicly available text is likely fair use. Even if some lawsuits succeed, she said, companies will adapt and continue training new models. "Using copyright will actually hurt creators more than it helps," she said.
+</p>
+      <p>Recently, there is less scraping on the AO3 platform. According to Tushnet, as AO3 contains many sexually explicit contents, many companies realize that this may not be an appropriate training set for those aiming to develop models for workplace or professional use.</p>
+      <p>Even works without sexual content often include niche fan fiction tropes, like Alpha/Beta/Omega (A/B/O) dynamics—an alternative universe in fandoms where characters are categorized into three different social or biological roles that shape power, relationships, and identity. These complex, community-specific story elements often don't align with the more conventional datasets used to train AI models.
+</p>
+      <p>"As a result, we're no longer something a lot of companies are looking to scrape," said Tushnet.</p>
+      <p>Cheng, a human–computer interaction researcher and longtime fan fiction participant, agrees that AO3 is a poor scraping source because it could provide inaccurate information to users. Recently, using DeepSeek, she asked a factual question about a Chinese rock band member and got an answer pulled from a fan fiction—one she herself had written. "It was bizarre," she said.</p>
+
+  
+      <p>Lack of transparency is another concern. "Fan fiction creators are uneasy because they don't know how AI companies collect data or how their work will be used to train models," Cheng said. That ambiguity fuels distrust and can chill the community. After Lofter, a Chinese fan fiction blog-styled platform owned by NetEase, admitted that they shared users' works with tech firms for machine-learning, many deleted their accounts and protested online. Many fan art creators said that their work had been used for AI training and to generate near-copy images which, paradoxically, attracted more followers than the original. In response, protesters circulated and flooded the site with a poster bearing the slogan "NO TO AI-GENERATED IMAGES." 
+</p>
+      <div class="grid-2">
+        <figure>
+          <img src="img/lofter.jpg" alt="lofter" class="media" style="max-width:520px; height:auto; display:block; margin:0 auto;">
+          <figcaption>Online protest, "no to AI generated images," posted on Lofter and Weibo.</figcaption>
+      </figure>
+        <figure>
+          <img src="img/lofter2.jpg" alt="lofter" class="media" style="max-width:520px; height:auto; display:block; margin:0 auto;">
+          <figcaption>Many fan art creators protested on Lofter and flooded the site with the anti-AI poster.</figcaption>
+      </figure>
+    </div>
+
+
+    </section>
+
+    <section>
+      <h2>AI‑Written Fan Fiction: Where the Lines Blur</h2>
+      <p>AI-generated fan fiction is more complicated. Tushnet draws a line between training new models and reusing creators' works. When generative AI scraps, reproduces fan fiction text, verbatim or lightly remixed, and publishes it as a "new" article, that can be a violation of copyright. </p>
+      <p>Before GPT-4, AI-generated fan fiction was usually just a short paragraph with low quality. People usually just posted them for fun—"to mock the absurdity," as Ding put it. As advanced models arrived, bot-written stories multiplied and improved, making readers harder to tell AI from human writing.</p>
+      <p>Many AI writing tools like sudowrite can generate long-form stories tailored to particular plots and settings. On AO3, more than 170 pages of works are tagged with "chatGPT" or "generative AI,"  indicating stories generated by AI tools.  Several writers reported that sections of their writing have appeared in those pieces–without credit or permission.</p>
+      <div>
+        <iframe title="Wave of AI-Generated Content Hits AO3" aria-label="Line chart" id="datawrapper-chart-tRUdE" src="https://datawrapper.dwcdn.net/tRUdE/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="537" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
+</script></div>
+        <p>Fan fiction is often deeply personal, written out of love for characters and shared with others who care just as much. AI-generated stories, by contrast, can feel empty and unearned. Even when they don’t copy existing work, much of the AO3 community opposes them. Some users called for a ban on all AI-generated works.
+</p>
+      <p>​​For Tushnet, the creative labor is the point: the time writers invest signals their enthusiasm and commitment to the fandom. Because AI-generated fan fiction can be produced in seconds, she isn’t interested in “reading any of them.”</p>
+     <blockquote><p>“I don’t understand why people want to do that,” Tushnet said. “If you don’t bother to write it, then I don’t bother to read it.”</p></blockquote>
+      <p>In Cheng’s study on fan fiction community affinity, reading fan works is “part of a social process,” a way for readers to form relationships with writers. That’s why, she said, she skips AI-generated stories.</p>
+      <figure>
+        <img src="img/chatgpt.png" alt="chatgpt" class="media">
+        <figcaption>An example of chatGPT generated article in fan pairing “Haikaveh” from the Chinese video game Genshin Impact.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="img/resp.png" alt="response" class="media">
+        <figcaption>Readers’ intense opposition below this chatGPT generated article</figcaption>
+      </figure>
+
+      <p>Cheng makes an exception: when a fandom has gone quiet and fans want material but few writers remain, AI-generated fan fiction may serve as a starter, adding content to enrich the fandom tag, pulling in more readers, and potentially reviving the fandom. “In this scenario, AI can be positive and help the fandom.” she said.</p>
+      <p>Cheng and Tushnet don’t dismiss AI entirely as it has uses for brainstorming and revision. “I sometimes ask AI for ideas on plot development or basic information when entering a fandom at first.” Cheng said. Additionally, beta-reading—feedback from trusted readers before publishing for improvement— is an established process for popular fan fiction creators. For those with less followers and fewer intimate relationships, like Cheng, chatGPT could function as a stand-in beta reader for light edits.</p>
+    
+    
+      <div>
+       <iframe title="Most AO3 Users Say No to AI-Written Stories" aria-label="Donut Chart" id="datawrapper-chart-0EXeQ" src="https://datawrapper.dwcdn.net/0EXeQ/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="548" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
+</script>
+      </div>
+
+      <p>While most users are frustrated with navigating AI-generated content, the AO3 management team doesn’t plan to ban AI-generated content on the site.
+</p>
+      <p>“In general, it is not possible to conclusively determine when works are AI-generated unless the author discloses their use.” Chu said.</p>
+      <p>Attempts to detect AI-generated works can also unintended harm. According to Tushnet, AI-detection tools may misidentify content written by non-native English speakers or translated fanworks, further causing disadvantage to users speaking minor languages. </p>
+    </section>
+
+    <section>
+      <h2>A Glimpse of the Future</h2>
+      <p>Instead of enforcement, AO3 relies on its tagging system. Tushnet encouraged readers and writers to use tags transparently, so those who dislike AI-generated stories can filter their search results.</p>
+     <p>“Hopefully those posting AI fan fiction will finally realize that other fans really want to hear human voices,” Tushnet said.</p>
+     <p>AO3’s technical team is working to improve systems that balance user experience with site safety. With the platform expanding rapidly, the Organization for Transformative Works plans to hire a small number of paid, full-time staff to help maintain and develop the site—marking a shift from its all-volunteer roots.</p>
+     
+     <p>As generative AI becomes more sophisticated and accessible, AO3 faces new challenges about machine-made content from spam comments to bot-written stories. For the community, the stakes aren't just about junks in the tags, but are authorship, creativity, and trust that sustain and nourish the space.
+</p>
+    <p>For Ding, the increased AI activity hasn’t shaken her love for fan fiction. But she became more cautious interacting with other users and reading feedback.</p>
+    <p>“I still expect to see comments and read stories in my fandom,” she said,”but I really want to see the creative process that only humans can do.”
+</p>
+    </section>
+
+    <section>
+      <h2>Methodology & Afterthoughts</h2>
+      <p>Visit Github for <strong>methods and data analysis</strong>.</p>
+      <p>Check here for how I did the project & reflections.</p>
+    </section>
+
+    <footer>
+      <div class="copyright">Copyright<br/>Kristen (He) Shen<br/>2025</div>
+    </footer>
+  </main>
+
+  <script>
+    // Datawrapper responsive height helper (one listener covers all embeds)
+    window.addEventListener("message", function(e){
+      if (typeof e.data["datawrapper-height"] !== "undefined") {
+        for (var id in e.data["datawrapper-height"]) {
+          var el = document.getElementById("datawrapper-chart-" + id) ||
+                   document.querySelector("iframe[src*='"+id+"']");
+          if(el){ el.style.height = e.data["datawrapper-height"][id] + "px"; }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

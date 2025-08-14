@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Afterthoughts: Generative AI Frustrates AO3 Community</title>
+  <meta name="description" content="From AI chatbots writing offensive comments to AI-written fic, AO3's community contends with authorship, trust, and creativity in the age of generative AI." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#f8fafc;
+      --text:#111827;
+      --muted:#64748b;
+      --accent:#2563eb;
+      --accent-2:#b45309;
+      --maxw: 900px;
+      --reading-measure: 75ch;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    a {
+      color: #580bcc;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    a:hover {
+      text-decoration: underline;
+      opacity: 0.85;
+    }
+    
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+    
+    header.hero {
+      padding: 80px 0 48px;
+      border-bottom: 1px solid #e2e8f0;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(134,225,249,.08), transparent 60%),
+        radial-gradient(800px 400px at 120% -10%, rgba(255,209,102,.06), transparent 60%);
+      position: relative;
+    }
+    
+    header.hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(37,99,235,0.015), rgba(180,83,9,0.015));
+      pointer-events: none;
+    }
+    
+    .kicker {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: 0.8rem;
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+    
+    h1 {
+      font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+      line-height: 1.1;
+      margin: 0.8rem 0 0;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      max-width: var(--reading-measure);
+    }
+    
+    .byline {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+    
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    .blurb {
+      font-size: 1.25rem;
+      color: var(--text);
+      margin-top: 28px;
+      line-height: 1.6;
+      max-width: var(--reading-measure);
+      font-weight: 400;
+    }
+
+    .content {
+      padding: 56px 0;
+    }
+    
+    .content p {
+      line-height: 1.8;
+      margin: 1.75rem 0;
+      font-size: 1.125rem;
+      max-width: var(--reading-measure);
+      font-weight: 400;
+    }
+    
+    .lede {
+      font-size: 1.35rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    
+    .dropcap::first-letter {
+      float: left;
+      font-size: 4.2rem;
+      line-height: 0.8;
+      padding: 0.3rem 0.7rem 0 0;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin: 4rem 0 1.5rem;
+      font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      max-width: var(--reading-measure);
+    }
+    
+    h3 {
+      margin: 2.5rem 0 1rem;
+      font-size: 1.3rem;
+      color: var(--accent-2);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    figure {
+      margin: 3rem 0;
+      padding: 0;
+    }
+    
+    figure .media {
+      width: 100%;
+      height: auto;
+      border: none;
+      border-radius: 16px;
+      display: block;
+      transition: var(--transition);
+     
+    }
+    
+    figure .media:hover {
+      transform: translateY(-4px);
+     
+    }
+    
+    figcaption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 16px;
+      font-style: italic;
+      text-align: left;
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      line-height: 1.5;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .chart {
+      background: var(--card);
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 24px;
+      margin: 3rem 0;
+      /* box-shadow: 0 4px 24px rgba(0,0,0,0.05); */
+    }
+    
+    .chart iframe {
+      width: 100%;
+      height: 520px;
+      border: 0;
+      border-radius: 12px;
+    }
+
+    blockquote {
+      margin: 3rem 0;
+      padding: 2rem 2.5rem;
+      border-left: 5px solid var(--accent);
+      background: linear-gradient(135deg, #f8fafc, #ffffff);
+      border-radius: 16px;
+      color: #374151;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      max-width: var(--reading-measure);
+    }
+    
+    blockquote p {
+      margin: 0;
+    }
+
+    .callout {
+      background: linear-gradient(180deg, rgba(37,99,235,.04), rgba(37,99,235,.02));
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 28px;
+      margin: 3rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .grid-2 {
+      display: grid;
+      gap: 32px;
+      grid-template-columns: 1fr;
+      margin: 4rem 0;
+    }
+    
+    @media(min-width: 900px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    footer {
+      margin-top: 96px;
+      padding: 40px 0;
+      border-top: 1px solid #e2e8f0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    
+    .copyright {
+      margin-top: 16px;
+      text-align: center;
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #475569;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      background: #f8fafc;
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    
+    .tag:hover {
+      background: #e2e8f0;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Enhanced typography */
+    strong {
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    /* Grid improvements for images */
+    .grid-2 figure {
+      margin: 0;
+    }
+    
+    .grid-2 .media {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+      .wrap {
+        padding: 24px 20px;
+      }
+      
+      header.hero {
+        padding: 60px 0 36px;
+      }
+      
+      .content {
+        padding: 40px 0;
+      }
+      
+      h2 {
+        margin: 3rem 0 1.25rem;
+      }
+      
+      .dropcap::first-letter {
+        font-size: 3.5rem;
+        padding: 0.2rem 0.5rem 0 0;
+      }
+      
+      blockquote {
+        padding: 1.5rem 1.75rem;
+        margin: 2.5rem 0;
+        font-size: 1.1rem;
+      }
+      
+      figure {
+        margin: 2.5rem 0;
+      }
+      
+      .chart {
+        padding: 20px;
+        margin: 2.5rem 0;
+      }
+      
+      .chart iframe {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        padding: 20px 16px;
+      }
+      
+      .content p {
+        font-size: 1.1rem;
+      }
+      
+      .lede {
+        font-size: 1.25rem;
+      }
+      
+      .blurb {
+        font-size: 1.15rem;
+      }
+      
+      .chart iframe {
+        height: 350px;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      html, body {
+        background: #fff;
+        color: #000;
+      }
+      
+      header.hero {
+        background: none;
+        border-bottom: 1px solid #111;
+      }
+      
+      a {
+        color: #000;
+        text-decoration: underline;
+      }
+      
+      .wrap {
+        max-width: 100%;
+        padding: 0;
+      }
+      
+      figure, .chart {
+        background: #fff;
+        border: 1px solid #d1d5db;
+        box-shadow: none;
+      }
+      
+      .chart iframe {
+        display: none;
+      }
+      
+      .chart::after {
+        content: "Chart: " attr(data-print-url) " (see online)";
+        display: block;
+        padding: 8px 0;
+        color: #000;
+        font-size: 0.9rem;
+      }
+      
+      .kicker, .byline, .meta, .blurb {
+        color: #000;
+      }
+      
+      .tag {
+        border: 1px solid #000;
+        background: #fff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="kicker">Master Project Afterthoughts · 2025</div>
+      <h1>From “A Room of One’s Own” to “Archive of Our Own”: Fan Fiction Community as an Intimate Space</h1>
+      <div class="byline">By <a href="https://kristen-shen.github.io/">Kristen Shen</a></div>
+      <div class="meta">
+        <span class="tag">~ 700 Words</span>
+      </div>
+      <div>
+        <p class="blurb">A reflection on how I researched and created my long-form multimedia narrative story on generative AI's impact on fan fiction community.</p>
+      </div>
+
+  </header>
+
+  <main class="wrap content">
+
+    <section>
+      <p class="lede dropcap">Long a subculture near the edge, the fan fiction community has sparked controversy for its explicit sexual content, niche world view, and description of real person romance. The 227 and Haitang incidents complicated fan-fiction creation, entangling it with censorship, surveillance, copyright, and reputation.
+     </p>
+     <p>“Most fandoms are niche circles,” said one interviewee who has written fan fiction since middle school. Unlike most genres, fan fiction largely remains inside its own communities, favoring tight bonds over large scale.</p>
+ 
+
+
+      <p>
+        Fan fiction, as an extension of existing works, sits outside the canon and often draws the critique that it isn’t “real” writing or art. Yet fandoms are sustained by shared devotion: readers and writers form close-knit communities that sometimes spill offline into friendships and meetups.
+      </p>
+      <p>Just as Virginia Woolf argued for “a room of one’s own,” fans built theirs “Archive of Our Own,” known as AO3, a community-run space for noncommercial fan fiction works, buffered from advertiser whims and rights-holder pressure. The “our” reaches beyond creators to readers, commenters, and anyone who engages with the fandom.
+ </p>
+      <p>Fascinated by this community, I kept an eye on Tumblr’s AO3 tags. A post about an AI-sounding comment caught my eye. Reaching out to the author, I saw how crucial comments and beta reading are to the community’s cohesion.</p>
+     <p>Would the archive still be “ours” if AI enters the creative process? I carried that question into interviews with writers across fandoms and scholars, and I gathered mixed perspectives from AO3 and the r/AO3 subreddit.
+</p>
+    <p>The community's concerns mirror the broader debate over AI and authorship. Navigating AO3’s tag system, I treated the site as a text corpus to chart trends and run a modest sentiment analysis. Data visualization, including AO3’s fast growth, popular fandoms, and chatGPT-related contents, enrich my reporting and underscore the rising concern about AI’s proliferation. The analysis confirms broad pushback on AO3; many say AI-written stories can’t reflect the devotion to the fandom that sustains the community.</p>
+    <p>With AI adding a new layer to an already complex community, I struggled with structure—how to keep the story clear and engaging for readers unfamiliar with fandom culture. I opened with a personal scene, then organized the piece into sections, each anchored by a single question. The charts act as signposts—bridging transitions and framing each section. I also included screenshots from AO3 and other fan-fiction platforms to give readers a feel for the community. After several rounds of revisions, I rebuilt the piece to make AI the thread that runs through it. 
+</p>
+    <p>I really appreciated this opportunity for long-form, multimedia storytelling as well as the opportunity to delve into a topic that I’m always interested in. I’m also excited to see my data skills applied in the reporting and create multiple self-generated datasets. 
+
+
+This project let me stretch into long-form, multimedia work and sink into a subject I love for years. I took joy in every stage—research, interviews, and the writing that followed.
+</p>
+
+  <p>Most data visualization pieces I read center on policy and environmental coverage, so I welcomed the chance to build original datasets and conduct data and textual analysis for a culture-focused piece. This project enabled me to see new possibilities of blending data with narratives, as it can be both serious and playful.
+</p>
+  <p>If I have the opportunity to extend this project, I’ll sample discussions across multiple platforms, run a larger-scale sentiment analysis, and categorize the drivers of opposition to AI-written fan fiction. Then, I will examine how those reasons align with core community values.</p>
+  <p>In this story, I investigated whether the archive remains “ours” when machines enter the room. From “A Room of One’s Own” to “Archive of Our Own”, the space is built by the people who love and engage with it. I hope my reporting carries that room’s spirit—curiosity, care, and caution—while knitting multiple elements into a coherent and comprehensive narrative.</p>
+  
+   <footer>
+      <div class="copyright">Copyright<br/>Kristen (He) Shen<br/>2025</div>
+    </footer>
+  </main>
+
+  <script>
+    // Datawrapper responsive height helper (one listener covers all embeds)
+    window.addEventListener("message", function(e){
+      if (typeof e.data["datawrapper-height"] !== "undefined") {
+        for (var id in e.data["datawrapper-height"]) {
+          var el = document.getElementById("datawrapper-chart-" + id) ||
+                   document.querySelector("iframe[src*='"+id+"']");
+          if(el){ el.style.height = e.data["datawrapper-height"][id] + "px"; }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+      
+   
